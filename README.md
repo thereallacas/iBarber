@@ -1,4 +1,4 @@
-# {iBarber}
+# iBarber
 
 ## Specifikáció
 Az alkalmazás egy barber (borbély, fodrász) napi tevékenységének rögzítésére alkalmas felületet biztosít, a felhasználó számára konfigurálható módon. A felhasználó rögzíteni tudja, kik jöttek aznap hozzá, és mennyi a bevétele tőlük. Az ügyfelek adatai rögzíthetőek, hogy később könnyebben rögzíteni lehessen őket. 
