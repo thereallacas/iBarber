@@ -7,15 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		529673EC1DD24F6D00E40375 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529673EA1DD24F6D00E40375 /* Realm.framework */; };
+		529673ED1DD24F6D00E40375 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 529673EA1DD24F6D00E40375 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		529673EE1DD24F6D00E40375 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529673EB1DD24F6D00E40375 /* RealmSwift.framework */; };
+		529673EF1DD24F6D00E40375 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 529673EB1DD24F6D00E40375 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		52E2BAB11DD2003000C5DEBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E2BAB01DD2003000C5DEBE /* AppDelegate.swift */; };
 		52E2BAB31DD2003000C5DEBE /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E2BAB21DD2003000C5DEBE /* MasterViewController.swift */; };
 		52E2BAB51DD2003000C5DEBE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E2BAB41DD2003000C5DEBE /* DetailViewController.swift */; };
 		52E2BAB81DD2003000C5DEBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52E2BAB61DD2003000C5DEBE /* Main.storyboard */; };
 		52E2BABA1DD2003000C5DEBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52E2BAB91DD2003000C5DEBE /* Assets.xcassets */; };
 		52E2BABD1DD2003100C5DEBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52E2BABB1DD2003100C5DEBE /* LaunchScreen.storyboard */; };
+		52E2BAC51DD237E400C5DEBE /* Client😎.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E2BAC41DD237E400C5DEBE /* Client😎.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		520E95DE1DD24B3D0020F9CF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				529673EF1DD24F6D00E40375 /* RealmSwift.framework in Embed Frameworks */,
+				529673ED1DD24F6D00E40375 /* Realm.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		529673EA1DD24F6D00E40375 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		529673EB1DD24F6D00E40375 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		52E2BAAD1DD2003000C5DEBE /* iBarber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBarber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52E2BAB01DD2003000C5DEBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52E2BAB21DD2003000C5DEBE /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +46,7 @@
 		52E2BAB91DD2003000C5DEBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52E2BABC1DD2003100C5DEBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52E2BABE1DD2003100C5DEBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52E2BAC41DD237E400C5DEBE /* Client😎.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Client😎.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +54,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				529673EE1DD24F6D00E40375 /* RealmSwift.framework in Frameworks */,
+				529673EC1DD24F6D00E40375 /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +65,8 @@
 		52E2BAA41DD2002F00C5DEBE = {
 			isa = PBXGroup;
 			children = (
+				529673EA1DD24F6D00E40375 /* Realm.framework */,
+				529673EB1DD24F6D00E40375 /* RealmSwift.framework */,
 				52E2BAAF1DD2003000C5DEBE /* iBarber */,
 				52E2BAAE1DD2003000C5DEBE /* Products */,
 			);
@@ -60,6 +87,7 @@
 				52E2BAB21DD2003000C5DEBE /* MasterViewController.swift */,
 				52E2BAB41DD2003000C5DEBE /* DetailViewController.swift */,
 				52E2BAB61DD2003000C5DEBE /* Main.storyboard */,
+				52E2BAC41DD237E400C5DEBE /* Client😎.swift */,
 				52E2BAB91DD2003000C5DEBE /* Assets.xcassets */,
 				52E2BABB1DD2003100C5DEBE /* LaunchScreen.storyboard */,
 				52E2BABE1DD2003100C5DEBE /* Info.plist */,
@@ -77,6 +105,7 @@
 				52E2BAA91DD2003000C5DEBE /* Sources */,
 				52E2BAAA1DD2003000C5DEBE /* Frameworks */,
 				52E2BAAB1DD2003000C5DEBE /* Resources */,
+				520E95DE1DD24B3D0020F9CF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -142,6 +171,7 @@
 			files = (
 				52E2BAB51DD2003000C5DEBE /* DetailViewController.swift in Sources */,
 				52E2BAB31DD2003000C5DEBE /* MasterViewController.swift in Sources */,
+				52E2BAC51DD237E400C5DEBE /* Client😎.swift in Sources */,
 				52E2BAB11DD2003000C5DEBE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,6 +296,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = F93Z63QDN8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = iBarber/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hu.lacas.shark.iBarber;
@@ -279,6 +313,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = F93Z63QDN8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = iBarber/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hu.lacas.shark.iBarber;
@@ -306,6 +344,7 @@
 				52E2BAC31DD2003100C5DEBE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
