@@ -1,0 +1,313 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		52E2BAB11DD2003000C5DEBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E2BAB01DD2003000C5DEBE /* AppDelegate.swift */; };
+		52E2BAB31DD2003000C5DEBE /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E2BAB21DD2003000C5DEBE /* MasterViewController.swift */; };
+		52E2BAB51DD2003000C5DEBE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E2BAB41DD2003000C5DEBE /* DetailViewController.swift */; };
+		52E2BAB81DD2003000C5DEBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52E2BAB61DD2003000C5DEBE /* Main.storyboard */; };
+		52E2BABA1DD2003000C5DEBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52E2BAB91DD2003000C5DEBE /* Assets.xcassets */; };
+		52E2BABD1DD2003100C5DEBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52E2BABB1DD2003100C5DEBE /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		52E2BAAD1DD2003000C5DEBE /* iBarber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBarber.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		52E2BAB01DD2003000C5DEBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		52E2BAB21DD2003000C5DEBE /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		52E2BAB41DD2003000C5DEBE /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		52E2BAB71DD2003000C5DEBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		52E2BAB91DD2003000C5DEBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		52E2BABC1DD2003100C5DEBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		52E2BABE1DD2003100C5DEBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		52E2BAAA1DD2003000C5DEBE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		52E2BAA41DD2002F00C5DEBE = {
+			isa = PBXGroup;
+			children = (
+				52E2BAAF1DD2003000C5DEBE /* iBarber */,
+				52E2BAAE1DD2003000C5DEBE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		52E2BAAE1DD2003000C5DEBE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				52E2BAAD1DD2003000C5DEBE /* iBarber.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		52E2BAAF1DD2003000C5DEBE /* iBarber */ = {
+			isa = PBXGroup;
+			children = (
+				52E2BAB01DD2003000C5DEBE /* AppDelegate.swift */,
+				52E2BAB21DD2003000C5DEBE /* MasterViewController.swift */,
+				52E2BAB41DD2003000C5DEBE /* DetailViewController.swift */,
+				52E2BAB61DD2003000C5DEBE /* Main.storyboard */,
+				52E2BAB91DD2003000C5DEBE /* Assets.xcassets */,
+				52E2BABB1DD2003100C5DEBE /* LaunchScreen.storyboard */,
+				52E2BABE1DD2003100C5DEBE /* Info.plist */,
+			);
+			path = iBarber;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		52E2BAAC1DD2003000C5DEBE /* iBarber */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52E2BAC11DD2003100C5DEBE /* Build configuration list for PBXNativeTarget "iBarber" */;
+			buildPhases = (
+				52E2BAA91DD2003000C5DEBE /* Sources */,
+				52E2BAAA1DD2003000C5DEBE /* Frameworks */,
+				52E2BAAB1DD2003000C5DEBE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iBarber;
+			productName = iBarber;
+			productReference = 52E2BAAD1DD2003000C5DEBE /* iBarber.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		52E2BAA51DD2002F00C5DEBE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Macbook Pro";
+				TargetAttributes = {
+					52E2BAAC1DD2003000C5DEBE = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = F93Z63QDN8;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 52E2BAA81DD2002F00C5DEBE /* Build configuration list for PBXProject "iBarber" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 52E2BAA41DD2002F00C5DEBE;
+			productRefGroup = 52E2BAAE1DD2003000C5DEBE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				52E2BAAC1DD2003000C5DEBE /* iBarber */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		52E2BAAB1DD2003000C5DEBE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52E2BABD1DD2003100C5DEBE /* LaunchScreen.storyboard in Resources */,
+				52E2BABA1DD2003000C5DEBE /* Assets.xcassets in Resources */,
+				52E2BAB81DD2003000C5DEBE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		52E2BAA91DD2003000C5DEBE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52E2BAB51DD2003000C5DEBE /* DetailViewController.swift in Sources */,
+				52E2BAB31DD2003000C5DEBE /* MasterViewController.swift in Sources */,
+				52E2BAB11DD2003000C5DEBE /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		52E2BAB61DD2003000C5DEBE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52E2BAB71DD2003000C5DEBE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		52E2BABB1DD2003100C5DEBE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52E2BABC1DD2003100C5DEBE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		52E2BABF1DD2003100C5DEBE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		52E2BAC01DD2003100C5DEBE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		52E2BAC21DD2003100C5DEBE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = F93Z63QDN8;
+				INFOPLIST_FILE = iBarber/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = hu.lacas.shark.iBarber;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		52E2BAC31DD2003100C5DEBE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = F93Z63QDN8;
+				INFOPLIST_FILE = iBarber/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = hu.lacas.shark.iBarber;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		52E2BAA81DD2002F00C5DEBE /* Build configuration list for PBXProject "iBarber" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52E2BABF1DD2003100C5DEBE /* Debug */,
+				52E2BAC01DD2003100C5DEBE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52E2BAC11DD2003100C5DEBE /* Build configuration list for PBXNativeTarget "iBarber" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52E2BAC21DD2003100C5DEBE /* Debug */,
+				52E2BAC31DD2003100C5DEBE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 52E2BAA51DD2002F00C5DEBE /* Project object */;
+}
