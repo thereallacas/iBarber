@@ -20,6 +20,11 @@ class Client😎: Object {
         picture = p;
     }
     
+    override static func primaryKey() -> String? {
+        return "name"
+    }
+    
+    let incomes = LinkingObjects(fromType: Income💵.self, property: "client")
     
     
 }
