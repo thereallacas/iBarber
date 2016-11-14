@@ -8,37 +8,8 @@
 
 import UIKit
 
-class AddIncomeViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource{
+extension AddIncomeViewController: UITableViewDelegate, UITableViewDataSource{
     
-
-   
-    @IBOutlet weak var inputNameTextField: UITextField!
-    
-    
-    @IBOutlet weak var nameSuggestionTableView: UITableView!
-    
-    
-    
-    
-    
-    var autoCompletePossibilities = ["jani", "dezső", "laci", "lali"]
-    var autoComplete = [String]()
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        inputNameTextField.delegate = self
-        nameSuggestionTableView.delegate = self
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    // MARK - TableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as UITableViewCell
         let index = indexPath.row as Int
@@ -51,8 +22,19 @@ class AddIncomeViewController: UIViewController, UITextFieldDelegate, UITableVie
     }
     
     
+    func tableView(_ tableView: UITableView,
+                   heightForRowAt indexPath: IndexPath) -> CGFloat{
+        return 20
+    }
     
-    // MARK - UITextFieldDelegate
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedCell : UITableViewCell = nameSuggestionTableView.cellForRow(at: indexPath)!
+        inputNameTextFieldForIncome.text = selectedCell.textLabel!.text!
+        
+    }
+}
+
+extension AddIncomeViewController: UITextFieldDelegate{
     
     func textField(_ textField: UITextField,
                    shouldChangeCharactersIn range: NSRange,
@@ -67,24 +49,100 @@ class AddIncomeViewController: UIViewController, UITextFieldDelegate, UITableVie
     func searchAutocompleteEntriesWithSubstring(substring: String)
     {
         autoComplete.removeAll(keepingCapacity: false)
-       
+        
         for key in autoCompletePossibilities {
             let myString : NSString! = key as NSString
             let substringRange : NSRange = myString.range(of: substring)
             if (substringRange.location == 0){
                 autoComplete.append(key)
             }
-           nameSuggestionTableView.reloadData()
+            nameSuggestionTableView.reloadData()
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+class AddIncomeViewController: UIViewController {
+    
+    
+    @IBAction func backgroundTouchUpInside(_ sender: AnyObject) {
+        view.endEditing(true)
+    }
+    
+    @IBOutlet weak var inputNameTextFieldForIncome: UITextField!
+    
+    @IBOutlet weak var nameSuggestionTableView: UITableView!
+    
+    @IBOutlet weak var TopConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var inputMoneyTextField: UITextField!
+    
+    var constantForPortrait: CGFloat?
+    var constantForLandScape: CGFloat?
+    var constantForPortraitWithKeyboard : CGFloat?
+    var constantForLandScapeWithKeyboard : CGFloat?
+    
+    var autoCompletePossibilities = ["Hutter Iván", "Márkusné Eta", "Balog Erika", "Timár Laci", "Oláh Árpád", "Mészáros Lajos"]
+    var autoComplete = [String]()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        nameSuggestionTableView.delegate = self
+        inputNameTextFieldForIncome.delegate = self
+        constantForPortrait = TopConstraint.constant
+        constantForLandScape = constantForPortrait!/4
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(AddClientViewController.keyboardWillShow), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(AddClientViewController.keyboardWillHide), name: .UIKeyboardWillHide, object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    func keyboardWillShow(notification: Notification) {
+        print("keyboardwillshow")
+        
+        if (inputNameTextFieldForIncome.isEditing){
+            //do nothing xdd
+        }
+        else if (inputMoneyTextField.isEditing){
+            if let userInfo = notification.userInfo, let keyboardSize = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue, let duration = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue {
+                UIView.animate(withDuration: duration, animations:{
+                    if (UIDevice.current.orientation.isPortrait){
+                        self.TopConstraint.constant = self.TopConstraint.constant +
+                            self.constantForPortrait!-self.TopConstraint.constant-keyboardSize.height/3
+                    }
+                    else {
+                        self.TopConstraint.constant = self.TopConstraint.constant +
+                            self.constantForLandScape!-self.TopConstraint.constant-keyboardSize.height/3
+                    }
+                 })
+            }
+        }
+    }
+    
+    func keyboardWillHide(notification: Notification) {
+        print("keyboardwillhide")
+        if let userInfo = notification.userInfo,
+            let duration = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue {
+            UIView.animate(withDuration: duration) {
+                if (UIDevice.current.orientation.isLandscape){
+                    self.TopConstraint.constant = self.constantForLandScape!
+                }
+                else{
+                    self.TopConstraint.constant = self.constantForPortrait!
+                }
+                self.view.layoutIfNeeded()
+            }
+        }}
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+}
+
