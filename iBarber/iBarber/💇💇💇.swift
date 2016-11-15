@@ -7,7 +7,10 @@
 //
 
 import UIKit
+import RealmSwift
 
-class ______: Object {
-
+class 💇💇💇: Object {
+    dynamic var name = "TheClientList"
+    dynamic var createdAt = NSDate()
+    let clients = List<💇>()
 }

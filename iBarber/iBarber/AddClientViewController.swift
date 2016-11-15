@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 extension AddClientViewController: UITextViewDelegate{
     func textViewDidBeginEditing(_ textView: UITextView) {
@@ -30,12 +31,23 @@ extension AddClientViewController: UITextViewDelegate{
 class AddClientViewController: UIViewController {
     
     
+    @IBAction func clientSaveButtonTouchUpInside(_ sender: AnyObject) {
+        let client = 💇(value: ["name":inputPhoneNumberTextField?.text,"desc":AddClientDescriptionTextView?.text,"phoneNumber":Int((inputPhoneNumberTextField?.text)!)])
+        try! 🗄.write {
+            () -> Void in
+            🗄.add(client)
+        }
+    }
+    
+    
     @IBAction func onBackgroundTouchUpInside(_ sender: AnyObject) {
         view.endEditing(true)
     }
+  
     @IBOutlet weak var TopConstraint: NSLayoutConstraint!
     
-    var constant: CGFloat?
+    var constantForPortrait: CGFloat?
+    var constantForLandScape: CGFloat?
     
     @IBOutlet weak var inputNameTextField: UITextField!
     
@@ -43,12 +55,10 @@ class AddClientViewController: UIViewController {
     
     @IBOutlet weak var AddClientDescriptionTextView: UITextView!
     
-    @IBOutlet weak var constraint: NSLayoutConstraint!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        constant = TopConstraint.constant
+        constantForPortrait = TopConstraint.constant
         AddClientDescriptionTextView.delegate = self
     }
     
@@ -63,18 +73,24 @@ class AddClientViewController: UIViewController {
         NotificationCenter.default.removeObserver(self)
     }
     
+    
+    //TODO - delete stupidity AND MAYBE ORIENTATION CHECK FOR keyboardsize.height/x
     func keyboardWillShow(notification: Notification) {
-        self.TopConstraint.constant = self.constant!
+        //self.TopConstraint.constant = self.constantForPortrait!
         if (inputNameTextField.isEditing){
             //do nothing xdd
         }
-        else if (inputPhoneNumberTextField.isEditing){
+        else {
             if let userInfo = notification.userInfo, let keyboardSize = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue, let duration = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue {
-                UIView.animate(withDuration: duration, animations:{ self.TopConstraint.constant = self.TopConstraint.constant - keyboardSize.height/2})
+                UIView.animate(withDuration: duration, animations:{
+                    if (self.inputPhoneNumberTextField.isEditing){
+                    self.TopConstraint.constant = self.TopConstraint.constant+self.constantForPortrait!-self.TopConstraint.constant - keyboardSize.height
+                    }
+                    else {
+                        self.TopConstraint.constant = self.TopConstraint.constant+self.constantForPortrait!-self.TopConstraint.constant-keyboardSize.height
+                    }
+                })
             }
-        }
-        else if let userInfo = notification.userInfo, let keyboardSize = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue, let duration = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue {
-            UIView.animate(withDuration: duration, animations:{ self.TopConstraint.constant = self.TopConstraint.constant - keyboardSize.height})
         }
     }
     
@@ -82,7 +98,7 @@ class AddClientViewController: UIViewController {
         if let userInfo = notification.userInfo,
             let duration = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue {
             UIView.animate(withDuration: duration) {
-                self.TopConstraint.constant = self.constant!
+                self.TopConstraint.constant = self.constantForPortrait!
                 self.view.layoutIfNeeded()
             }
         }}

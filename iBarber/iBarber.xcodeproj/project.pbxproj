@@ -11,6 +11,10 @@
 		529673ED1DD24F6D00E40375 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 529673EA1DD24F6D00E40375 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		529673EE1DD24F6D00E40375 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529673EB1DD24F6D00E40375 /* RealmSwift.framework */; };
 		529673EF1DD24F6D00E40375 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 529673EB1DD24F6D00E40375 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		52C52D951DDA2DE9008C2AA7 /* incomeTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C52D941DDA2DE9008C2AA7 /* incomeTableTableViewController.swift */; };
+		52C52D971DDA2E29008C2AA7 /* clientTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C52D961DDA2E29008C2AA7 /* clientTableViewController.swift */; };
+		52C52D991DDA380B008C2AA7 /* 💇💇💇.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C52D981DDA380B008C2AA7 /* 💇💇💇.swift */; };
+		52C52D9B1DDA3984008C2AA7 /* 💵💵💵.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C52D9A1DDA3984008C2AA7 /* 💵💵💵.swift */; };
 		52C76E2F1DD7BED200233A2B /* AddClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C76E2E1DD7BED200233A2B /* AddClientViewController.swift */; };
 		52E2BAB11DD2003000C5DEBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E2BAB01DD2003000C5DEBE /* AppDelegate.swift */; };
 		52E2BAB31DD2003000C5DEBE /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E2BAB21DD2003000C5DEBE /* MasterViewController.swift */; };
@@ -18,10 +22,10 @@
 		52E2BAB81DD2003000C5DEBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52E2BAB61DD2003000C5DEBE /* Main.storyboard */; };
 		52E2BABA1DD2003000C5DEBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52E2BAB91DD2003000C5DEBE /* Assets.xcassets */; };
 		52E2BABD1DD2003100C5DEBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52E2BABB1DD2003100C5DEBE /* LaunchScreen.storyboard */; };
-		52E2BAC51DD237E400C5DEBE /* Client😎.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E2BAC41DD237E400C5DEBE /* Client😎.swift */; };
+		52E2BAC51DD237E400C5DEBE /* 💇.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E2BAC41DD237E400C5DEBE /* 💇.swift */; };
 		52EE876F1DD687180008C980 /* AddIncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EE876E1DD687180008C980 /* AddIncomeViewController.swift */; };
-		52F6C2F31DD4FA5300CDD768 /* Income💵.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F6C2F21DD4FA5300CDD768 /* Income💵.swift */; };
-		52F6C2F51DD4FF9800CDD768 /* Prices📋.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F6C2F41DD4FF9800CDD768 /* Prices📋.swift */; };
+		52F6C2F31DD4FA5300CDD768 /* 💵.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F6C2F21DD4FA5300CDD768 /* 💵.swift */; };
+		52F6C2F51DD4FF9800CDD768 /* 💯.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F6C2F41DD4FF9800CDD768 /* 💯.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -42,6 +46,10 @@
 /* Begin PBXFileReference section */
 		529673EA1DD24F6D00E40375 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		529673EB1DD24F6D00E40375 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
+		52C52D941DDA2DE9008C2AA7 /* incomeTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = incomeTableTableViewController.swift; sourceTree = "<group>"; };
+		52C52D961DDA2E29008C2AA7 /* clientTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = clientTableViewController.swift; sourceTree = "<group>"; };
+		52C52D981DDA380B008C2AA7 /* 💇💇💇.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "💇💇💇.swift"; sourceTree = "<group>"; };
+		52C52D9A1DDA3984008C2AA7 /* 💵💵💵.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "💵💵💵.swift"; sourceTree = "<group>"; };
 		52C76E2E1DD7BED200233A2B /* AddClientViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddClientViewController.swift; sourceTree = "<group>"; };
 		52E2BAAD1DD2003000C5DEBE /* iBarber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBarber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52E2BAB01DD2003000C5DEBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,10 +59,10 @@
 		52E2BAB91DD2003000C5DEBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52E2BABC1DD2003100C5DEBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52E2BABE1DD2003100C5DEBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		52E2BAC41DD237E400C5DEBE /* Client😎.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Client😎.swift"; sourceTree = "<group>"; };
+		52E2BAC41DD237E400C5DEBE /* 💇.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "💇.swift"; sourceTree = "<group>"; };
 		52EE876E1DD687180008C980 /* AddIncomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddIncomeViewController.swift; sourceTree = "<group>"; };
-		52F6C2F21DD4FA5300CDD768 /* Income💵.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Income💵.swift"; sourceTree = "<group>"; };
-		52F6C2F41DD4FF9800CDD768 /* Prices📋.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Prices📋.swift"; sourceTree = "<group>"; };
+		52F6C2F21DD4FA5300CDD768 /* 💵.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "💵.swift"; sourceTree = "<group>"; };
+		52F6C2F41DD4FF9800CDD768 /* 💯.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "💯.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,14 +103,18 @@
 				52E2BAB21DD2003000C5DEBE /* MasterViewController.swift */,
 				52E2BAB41DD2003000C5DEBE /* DetailViewController.swift */,
 				52E2BAB61DD2003000C5DEBE /* Main.storyboard */,
-				52E2BAC41DD237E400C5DEBE /* Client😎.swift */,
-				52F6C2F21DD4FA5300CDD768 /* Income💵.swift */,
-				52F6C2F41DD4FF9800CDD768 /* Prices📋.swift */,
+				52E2BAC41DD237E400C5DEBE /* 💇.swift */,
+				52F6C2F21DD4FA5300CDD768 /* 💵.swift */,
+				52F6C2F41DD4FF9800CDD768 /* 💯.swift */,
 				52E2BAB91DD2003000C5DEBE /* Assets.xcassets */,
 				52E2BABB1DD2003100C5DEBE /* LaunchScreen.storyboard */,
 				52E2BABE1DD2003100C5DEBE /* Info.plist */,
 				52EE876E1DD687180008C980 /* AddIncomeViewController.swift */,
 				52C76E2E1DD7BED200233A2B /* AddClientViewController.swift */,
+				52C52D941DDA2DE9008C2AA7 /* incomeTableTableViewController.swift */,
+				52C52D961DDA2E29008C2AA7 /* clientTableViewController.swift */,
+				52C52D981DDA380B008C2AA7 /* 💇💇💇.swift */,
+				52C52D9A1DDA3984008C2AA7 /* 💵💵💵.swift */,
 			);
 			path = iBarber;
 			sourceTree = "<group>";
@@ -181,13 +193,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52F6C2F31DD4FA5300CDD768 /* Income💵.swift in Sources */,
+				52F6C2F31DD4FA5300CDD768 /* 💵.swift in Sources */,
 				52E2BAB51DD2003000C5DEBE /* DetailViewController.swift in Sources */,
+				52C52D971DDA2E29008C2AA7 /* clientTableViewController.swift in Sources */,
 				52E2BAB31DD2003000C5DEBE /* MasterViewController.swift in Sources */,
-				52F6C2F51DD4FF9800CDD768 /* Prices📋.swift in Sources */,
-				52E2BAC51DD237E400C5DEBE /* Client😎.swift in Sources */,
+				52C52D951DDA2DE9008C2AA7 /* incomeTableTableViewController.swift in Sources */,
+				52F6C2F51DD4FF9800CDD768 /* 💯.swift in Sources */,
+				52E2BAC51DD237E400C5DEBE /* 💇.swift in Sources */,
 				52EE876F1DD687180008C980 /* AddIncomeViewController.swift in Sources */,
 				52E2BAB11DD2003000C5DEBE /* AppDelegate.swift in Sources */,
+				52C52D9B1DDA3984008C2AA7 /* 💵💵💵.swift in Sources */,
+				52C52D991DDA380B008C2AA7 /* 💇💇💇.swift in Sources */,
 				52C76E2F1DD7BED200233A2B /* AddClientViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

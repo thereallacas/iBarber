@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 extension AddIncomeViewController: UITableViewDelegate, UITableViewDataSource{
     
@@ -30,7 +31,7 @@ extension AddIncomeViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedCell : UITableViewCell = nameSuggestionTableView.cellForRow(at: indexPath)!
         inputNameTextFieldForIncome.text = selectedCell.textLabel!.text!
-        
+        tableView.isHidden = true
     }
 }
 
@@ -48,6 +49,7 @@ extension AddIncomeViewController: UITextFieldDelegate{
     
     func searchAutocompleteEntriesWithSubstring(substring: String)
     {
+        nameSuggestionTableView.isHidden = false
         autoComplete.removeAll(keepingCapacity: false)
         
         for key in autoCompletePossibilities {
@@ -61,12 +63,46 @@ extension AddIncomeViewController: UITextFieldDelegate{
     }
 }
 
+extension AddIncomeViewController: UIPickerViewDataSource,UIPickerViewDelegate{
+    
+    
+    // The number of columns of data
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    // The number of rows of data
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+            return pickerData.count
+        }
+    
+    // The data to return for the row and component (column) that's being passed in
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerData[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedOperation = pickerData[row]
+        priceOfSelectedOperation = priceData[row]
+        pickerSelectionLabel.text = selectedOperation + ":" + String(priceOfSelectedOperation)
+    }
+}
+
 class AddIncomeViewController: UIViewController {
     
-    
-    @IBAction func backgroundTouchUpInside(_ sender: AnyObject) {
+    @IBAction func incomeSaveButtonTouchUpInside(_ sender: AnyObject) {
+        let income = 💵(value: ["operation": selectedOperation,"price": priceOfSelectedOperation,"total": Int(inputMoneyTextField.text!)])
+        try! 🗄.write {
+            () -> Void in
+            🗄.add(income)
+        }
+    }
+ 
+    @IBAction func onBackgroundTouchUpInside(_ sender: AnyObject) {
         view.endEditing(true)
     }
+    
+    @IBOutlet weak var operationPickerView: UIPickerView!
     
     @IBOutlet weak var inputNameTextFieldForIncome: UITextField!
     
@@ -76,10 +112,16 @@ class AddIncomeViewController: UIViewController {
     
     @IBOutlet weak var inputMoneyTextField: UITextField!
     
+    @IBOutlet weak var pickerSelectionLabel: UILabel!
+    
+    let pickerData: [String] = ["Férfi vágás","Férfi mosás vágás","Női mosás,vágás,szárítás"]
+    let priceData: [Int] = [1460, 1880,3880]
+
     var constantForPortrait: CGFloat?
     var constantForLandScape: CGFloat?
-    var constantForPortraitWithKeyboard : CGFloat?
-    var constantForLandScapeWithKeyboard : CGFloat?
+    
+    var selectedOperation: String = "Minta"
+    var priceOfSelectedOperation : Int = 0
     
     var autoCompletePossibilities = ["Hutter Iván", "Márkusné Eta", "Balog Erika", "Timár Laci", "Oláh Árpád", "Mészáros Lajos"]
     var autoComplete = [String]()
@@ -88,8 +130,12 @@ class AddIncomeViewController: UIViewController {
         super.viewDidLoad()
         nameSuggestionTableView.delegate = self
         inputNameTextFieldForIncome.delegate = self
+        operationPickerView.delegate = self
+        operationPickerView.dataSource = self
         constantForPortrait = TopConstraint.constant
         constantForLandScape = constantForPortrait!/4
+        print(constantForPortrait)
+        print(constantForLandScape)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -127,6 +173,8 @@ class AddIncomeViewController: UIViewController {
     
     func keyboardWillHide(notification: Notification) {
         print("keyboardwillhide")
+        print(self.constantForPortrait)
+        print(self.constantForLandScape)
         if let userInfo = notification.userInfo,
             let duration = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue {
             UIView.animate(withDuration: duration) {

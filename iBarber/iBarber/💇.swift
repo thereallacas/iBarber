@@ -24,7 +24,7 @@ class 💇: Object {
         return "name"
     }
     
-    let incomes = LinkingObjects(fromType: Income💵.self, property: "client")
+    let incomes = LinkingObjects(fromType: 💵.self, property: "client")
     
     
 }

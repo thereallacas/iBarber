@@ -7,17 +7,31 @@
 //
 
 import UIKit
+import RealmSwift
 
 class incomeTableTableViewController: UITableViewController {
 
+    var 💵💵💵 : Results<💵>!
+    
+    @IBOutlet var incomeTableView: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    func readincomeAndUpdateUI(){
+        💵💵💵 = 🗄.objects(💵.self)
+        self.incomeTableView.setEditing(false, animated: true)
+        self.incomeTableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {

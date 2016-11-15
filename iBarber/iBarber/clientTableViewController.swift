@@ -7,11 +7,17 @@
 //
 
 import UIKit
+import RealmSwift
 
 class clientTableViewController: UITableViewController {
 
+    var 💇💇💇 : Results<💇>!
+    
+    @IBOutlet var clientTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        💇💇💇 = 🗄.objects(💇.self)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
