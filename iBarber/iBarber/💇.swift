@@ -1,5 +1,5 @@
 //
-//  Client😎.swift
+//  💇.swift
 //  iBarber
 //
 //  Created by Macbook Pro on 08/11/16.
@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class Client😎: Object {
+class 💇: Object {
 
     dynamic var name:String = "Minta Jakab"
     dynamic var picture:String?

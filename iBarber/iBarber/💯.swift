@@ -1,5 +1,5 @@
 //
-//  Prices📋.swift
+//  💯.swift
 //  iBarber
 //
 //  Created by Macbook Pro on 10/11/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Prices__: NSObject {
+class 💯: NSObject {
     var pricelist: [String : Int]?
     override init(){
         super.init()

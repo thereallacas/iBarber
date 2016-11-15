@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 
 class Income💵: Object {
-    dynamic var client: Client😎?
+    dynamic var client: 💇?
     dynamic var price: Int=420
     dynamic var total: Int=500
     dynamic var tip: Int {
