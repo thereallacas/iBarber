@@ -14,6 +14,7 @@ class 💵: Object {
     dynamic var operation: String = "hajvágás"
     dynamic var price: Int=420
     dynamic var total: Int=500
+    dynamic var time: NSDate=NSDate.init()
     dynamic var tip: Int {
         return total-price
     }

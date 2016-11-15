@@ -31,7 +31,6 @@ extension AddIncomeViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedCell : UITableViewCell = nameSuggestionTableView.cellForRow(at: indexPath)!
         inputNameTextFieldForIncome.text = selectedCell.textLabel!.text!
-        tableView.isHidden = true
     }
 }
 
@@ -49,7 +48,6 @@ extension AddIncomeViewController: UITextFieldDelegate{
     
     func searchAutocompleteEntriesWithSubstring(substring: String)
     {
-        nameSuggestionTableView.isHidden = false
         autoComplete.removeAll(keepingCapacity: false)
         
         for key in autoCompletePossibilities {
@@ -91,7 +89,20 @@ extension AddIncomeViewController: UIPickerViewDataSource,UIPickerViewDelegate{
 class AddIncomeViewController: UIViewController {
     
     @IBAction func incomeSaveButtonTouchUpInside(_ sender: AnyObject) {
-        let income = 💵(value: ["operation": selectedOperation,"price": priceOfSelectedOperation,"total": Int(inputMoneyTextField.text!)])
+        
+        let total = Int(inputMoneyTextField.text!)!
+        let clientResult = 🗄.objects(💇.self).filter(NSPredicate(format: "name = %@", inputNameTextFieldForIncome.text!))
+        
+        var client : 💇!
+        if (clientResult.isEmpty){
+            client = 💇(value: ["name":inputNameTextFieldForIncome.text!])
+        }
+        else {
+            client = clientResult.first!
+        }
+        
+        let income = 💵(value: ["operation": selectedOperation,"price":priceOfSelectedOperation,"date":NSDate.init(),"client":client, "total":total])
+        
         try! 🗄.write {
             () -> Void in
             🗄.add(income)
@@ -132,6 +143,9 @@ class AddIncomeViewController: UIViewController {
         inputNameTextFieldForIncome.delegate = self
         operationPickerView.delegate = self
         operationPickerView.dataSource = self
+        selectedOperation = pickerData[0]
+        priceOfSelectedOperation = priceData[0]
+        pickerSelectionLabel.text = pickerData[0]
         constantForPortrait = TopConstraint.constant
         constantForLandScape = constantForPortrait!/4
         print(constantForPortrait)
@@ -150,8 +164,6 @@ class AddIncomeViewController: UIViewController {
     }
     
     func keyboardWillShow(notification: Notification) {
-        print("keyboardwillshow")
-        
         if (inputNameTextFieldForIncome.isEditing){
             //do nothing xdd
         }
@@ -172,7 +184,6 @@ class AddIncomeViewController: UIViewController {
     }
     
     func keyboardWillHide(notification: Notification) {
-        print("keyboardwillhide")
         print(self.constantForPortrait)
         print(self.constantForLandScape)
         if let userInfo = notification.userInfo,
