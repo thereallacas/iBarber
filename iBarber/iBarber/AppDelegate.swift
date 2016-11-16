@@ -15,10 +15,54 @@ let 🗄 = try! Realm()
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    func saveImageDocumentDirectory(filename: String){
+        let fileManager = FileManager.default
+        let paths = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(filename)
+        let image = UIImage(named: filename)
+        print(paths)
+        let imageData = UIImageJPEGRepresentation(image!, 0.5)
+        fileManager.createFile(atPath: paths as String, contents: imageData, attributes: nil)
+    }
+    
+    func getDirectoryPath() -> String {
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        let documentsDirectory = paths[0]
+        return documentsDirectory
+    }
+    
+    func getImage(filename: String)-> UIImage{
+        let fileManager = FileManager.default
+        let imagePath = (self.getDirectoryPath() as NSString).appendingPathComponent(filename)
+        if fileManager.fileExists(atPath: imagePath){
+            return UIImage(contentsOfFile: imagePath)!
+        }else{
+            print("No Image")
+            return UIImage("samplepic")
+        }
+    }
+    
+    fileprivate func createDirectory(directoryName:String){
+        let dirPaths = NSSearchPathForDirectoriesInDomains(.documentDirectory,
+                                                           .userDomainMask, true)
+        let documentsDirectory = dirPaths[0] 
 
+        let dataPath = documentsDirectory.appending("/"+directoryName)
+    
+    if !FileManager.default.fileExists(atPath: dataPath) {
+        try!FileManager.default.createDirectory(atPath: dataPath, withIntermediateDirectories: true, attributes: nil)
+    } else {
+        print("not created or exist")
+        }}
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        var pricelist = [["Férfi vágás",1460], ["Férfi mosás vágás",1880], ["Női mosás,vágás,szárítás",3880]]
+        try! 🗄.write {
+            for item in pricelist {
+                🗄.create(💯.self, value: item, update: true)
+            }
+        }
+        createDirectory(directoryName: "ClientPics")
         return true
     }
 

@@ -15,15 +15,27 @@ class clientTableViewController: UITableViewController {
     
     @IBOutlet var clientTableView: UITableView!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        💇💇💇 = 🗄.objects(💇.self)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        readclientAndUpdateUI()
+    }
+    
+    
+    func readclientAndUpdateUI(){
+        💇💇💇 = 🗄.objects(💇.self)
+        self.clientTableView.setEditing(false, animated: true)
+        self.clientTableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,23 +47,37 @@ class clientTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return 💇💇💇.count
     }
-
-    /*
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "showClientDetail", sender: self.💇💇💇[indexPath.row])
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ClientCell") as! 💇Cell
+        let client = self.💇💇💇[indexPath.row]
+        cell.nameLabel.text = client.name
+        cell.PhoneLabel.text = String(client.phoneNumber)
         return cell
     }
-    */
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if (segue.identifier == "showClientDetail"){
+        let clientDetailViewController = segue.destination as! ClientDetailViewController
+            clientDetailViewController.selectedClient = sender as! 💇 }
+        if (segue.identifier == "showAddClientDetail"){
+            //canidie
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.

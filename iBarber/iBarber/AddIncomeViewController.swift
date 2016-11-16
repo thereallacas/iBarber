@@ -150,6 +150,8 @@ class AddIncomeViewController: UIViewController {
         constantForLandScape = constantForPortrait!/4
         print(constantForPortrait)
         print(constantForLandScape)
+        autoCompletePossibilities = 🗄.objects(💇.self).value(forKey: "name") as! [String]
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

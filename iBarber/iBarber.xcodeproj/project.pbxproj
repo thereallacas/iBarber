@@ -8,13 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		5263609E1DDB389700701DEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5263609D1DDB389700701DEB /* AppDelegate.swift */; };
-		526360A01DDB389700701DEB /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5263609F1DDB389700701DEB /* FirstViewController.swift */; };
-		526360A21DDB389700701DEB /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526360A11DDB389700701DEB /* SecondViewController.swift */; };
 		526360A51DDB389800701DEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 526360A31DDB389800701DEB /* Main.storyboard */; };
 		526360A71DDB389800701DEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 526360A61DDB389800701DEB /* Assets.xcassets */; };
 		526360C01DDB42D500701DEB /* 💇.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526360B61DDB42D500701DEB /* 💇.swift */; };
 		526360C11DDB42D500701DEB /* 💵.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526360B71DDB42D500701DEB /* 💵.swift */; };
-		526360C21DDB42D500701DEB /* 💯.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526360B81DDB42D500701DEB /* 💯.swift */; };
 		526360C31DDB42D500701DEB /* AddIncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526360B91DDB42D500701DEB /* AddIncomeViewController.swift */; };
 		526360C41DDB42D500701DEB /* AddClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526360BA1DDB42D500701DEB /* AddClientViewController.swift */; };
 		526360C61DDB42D500701DEB /* clientTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526360BC1DDB42D500701DEB /* clientTableViewController.swift */; };
@@ -26,6 +23,9 @@
 		526360E31DDB49B700701DEB /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 526360DF1DDB49B700701DEB /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		526360E61DDB4AE100701DEB /* incomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526360E51DDB4AE100701DEB /* incomeTableViewController.swift */; };
 		52992AA01DDB543F00552D1D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52992A9F1DDB543F00552D1D /* LaunchScreen.storyboard */; };
+		52992AA21DDBA7C200552D1D /* 💯.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52992AA11DDBA7C200552D1D /* 💯.swift */; };
+		52992AA41DDC53B500552D1D /* ClientDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52992AA31DDC53B500552D1D /* ClientDetailViewController.swift */; };
+		52992AA81DDC5A6A00552D1D /* 💇Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52992AA71DDC5A6A00552D1D /* 💇Cell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -46,14 +46,11 @@
 /* Begin PBXFileReference section */
 		5263609A1DDB389700701DEB /* iBarber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBarber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5263609D1DDB389700701DEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5263609F1DDB389700701DEB /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		526360A11DDB389700701DEB /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		526360A41DDB389800701DEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		526360A61DDB389800701DEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		526360AB1DDB389800701DEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		526360B61DDB42D500701DEB /* 💇.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "💇.swift"; sourceTree = "<group>"; };
 		526360B71DDB42D500701DEB /* 💵.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "💵.swift"; sourceTree = "<group>"; };
-		526360B81DDB42D500701DEB /* 💯.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "💯.swift"; sourceTree = "<group>"; };
 		526360B91DDB42D500701DEB /* AddIncomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddIncomeViewController.swift; sourceTree = "<group>"; };
 		526360BA1DDB42D500701DEB /* AddClientViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddClientViewController.swift; sourceTree = "<group>"; };
 		526360BC1DDB42D500701DEB /* clientTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = clientTableViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +60,9 @@
 		526360DF1DDB49B700701DEB /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "swift-3.0/RealmSwift.framework"; sourceTree = "<group>"; };
 		526360E51DDB4AE100701DEB /* incomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = incomeTableViewController.swift; sourceTree = "<group>"; };
 		52992A9F1DDB543F00552D1D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		52992AA11DDBA7C200552D1D /* 💯.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "💯.swift"; sourceTree = "<group>"; };
+		52992AA31DDC53B500552D1D /* ClientDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientDetailViewController.swift; sourceTree = "<group>"; };
+		52992AA71DDC5A6A00552D1D /* 💇Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "💇Cell.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,17 +100,17 @@
 		5263609C1DDB389700701DEB /* iBarber */ = {
 			isa = PBXGroup;
 			children = (
+				52992AA11DDBA7C200552D1D /* 💯.swift */,
 				526360B61DDB42D500701DEB /* 💇.swift */,
 				526360B71DDB42D500701DEB /* 💵.swift */,
-				526360B81DDB42D500701DEB /* 💯.swift */,
 				526360B91DDB42D500701DEB /* AddIncomeViewController.swift */,
 				526360BA1DDB42D500701DEB /* AddClientViewController.swift */,
 				526360BC1DDB42D500701DEB /* clientTableViewController.swift */,
+				52992AA31DDC53B500552D1D /* ClientDetailViewController.swift */,
 				526360E51DDB4AE100701DEB /* incomeTableViewController.swift */,
+				52992AA71DDC5A6A00552D1D /* 💇Cell.swift */,
 				526360BF1DDB42D500701DEB /* 💵Cell.swift */,
 				5263609D1DDB389700701DEB /* AppDelegate.swift */,
-				5263609F1DDB389700701DEB /* FirstViewController.swift */,
-				526360A11DDB389700701DEB /* SecondViewController.swift */,
 				526360A31DDB389800701DEB /* Main.storyboard */,
 				526360A61DDB389800701DEB /* Assets.xcassets */,
 				52992A9F1DDB543F00552D1D /* LaunchScreen.storyboard */,
@@ -194,14 +194,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				526360A21DDB389700701DEB /* SecondViewController.swift in Sources */,
 				5263609E1DDB389700701DEB /* AppDelegate.swift in Sources */,
 				526360C61DDB42D500701DEB /* clientTableViewController.swift in Sources */,
 				526360C11DDB42D500701DEB /* 💵.swift in Sources */,
-				526360A01DDB389700701DEB /* FirstViewController.swift in Sources */,
+				52992AA41DDC53B500552D1D /* ClientDetailViewController.swift in Sources */,
+				52992AA21DDBA7C200552D1D /* 💯.swift in Sources */,
 				526360C01DDB42D500701DEB /* 💇.swift in Sources */,
+				52992AA81DDC5A6A00552D1D /* 💇Cell.swift in Sources */,
 				526360C31DDB42D500701DEB /* AddIncomeViewController.swift in Sources */,
-				526360C21DDB42D500701DEB /* 💯.swift in Sources */,
 				526360E61DDB4AE100701DEB /* incomeTableViewController.swift in Sources */,
 				526360C91DDB42D500701DEB /* 💵Cell.swift in Sources */,
 				526360C41DDB42D500701DEB /* AddClientViewController.swift in Sources */,

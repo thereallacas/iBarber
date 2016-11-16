@@ -7,15 +7,13 @@
 //
 
 import UIKit
+import RealmSwift
 
-class 💯: NSObject {
-    var pricelist: [String : Int]?
-    override init(){
-        super.init()
-        pricelist = ["Basic": 100, "Fade": 150, "Shaving":200]
-        let lazyMapCollection = pricelist!.keys
-        
-        let stringArray = Array(lazyMapCollection)
-        print(stringArray)
+class 💯: Object {
+    dynamic var operation: String = "hajvágás"
+    dynamic var price: Int = 100
+    override static func primaryKey() -> String? {
+        return "operation"
     }
+    
 }

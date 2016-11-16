@@ -28,17 +28,89 @@ extension AddClientViewController: UITextViewDelegate{
     }
 }
 
+extension AddClientViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage
+        clientImageView.image = selectedImage
+        imagePath="NOIMAGE"
+        dismiss(animated: true, completion: nil)
+    }
+}
+
 class AddClientViewController: UIViewController {
-    
-    
-    @IBAction func clientSaveButtonTouchUpInside(_ sender: AnyObject) {
-        let client = 💇(value: ["name":inputPhoneNumberTextField?.text,"desc":AddClientDescriptionTextView?.text,"phoneNumber":Int((inputPhoneNumberTextField?.text)!)])
-        try! 🗄.write {
-            () -> Void in
-            🗄.add(client)
-        }
+    @IBAction func SelectImageTouchUpInside(_ sender: AnyObject) {
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: {
+            action in
+            picker.sourceType = .camera
+            self.present(picker, animated: true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: {
+            action in
+            picker.sourceType = .photoLibrary
+            self.present(picker, animated: true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
+    func saveImageDocumentDirectory(){
+        let fileManager = FileManager.default
+        let paths = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent("ClientPics/"+inputNameTextField.text!+"client.jpg")
+        let image = clientImageView.image
+        print(paths)
+        imagePath = paths
+        let imageData = UIImageJPEGRepresentation(image!, 0.5)
+        fileManager.createFile(atPath: paths as String, contents: imageData, attributes: nil)
+    }
+    
+    @IBAction func clientSaveButtonTouchUpInside(_ sender: AnyObject) {
+        
+        if (inputNameTextField.text=="" || inputPhoneNumberTextField.text=="" ||
+            AddClientDescriptionTextView.text==""){
+            let alertController = UIAlertController(title: "Error", message: "One or more field is empty.", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
+                UIAlertAction in
+                NSLog("OK Pressed")
+            }
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
+        if (Int(inputPhoneNumberTextField.text!)==nil){
+            let alertController = UIAlertController(title: "Error", message: "Invalid phone number format", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
+                UIAlertAction in
+                NSLog("OK Pressed")
+            }
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
+        
+        if (clientImageView.image==nil){
+            imagePath = "NOIMAGE"
+        }
+        else {
+        saveImageDocumentDirectory()
+        let name = inputNameTextField.text!
+        let desc = AddClientDescriptionTextView.text!
+        let phonenumber = Int(inputPhoneNumberTextField.text!)!
+        
+        try! 🗄.write {
+            () -> Void in
+            🗄.create(💇.self, value: ["name":name,"desc":desc,"phoneNumber":phonenumber, "picture":imagePath], update: true)
+        }
+            let alertController = UIAlertController(title: "Success", message: "Client saved to the database.", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
+                UIAlertAction in
+                NSLog("OK Pressed")
+            }
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
+        view.endEditing(true)
+    }
     
     @IBAction func onBackgroundTouchUpInside(_ sender: AnyObject) {
         view.endEditing(true)
@@ -55,6 +127,9 @@ class AddClientViewController: UIViewController {
     
     @IBOutlet weak var AddClientDescriptionTextView: UITextView!
     
+    @IBOutlet weak var clientImageView: UIImageView!
+    
+    var imagePath: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
