@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52339CC41DDD0C9D00F2D395 /* CalendarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52339CC31DDD0C9D00F2D395 /* CalendarTableViewController.swift */; };
 		5263609E1DDB389700701DEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5263609D1DDB389700701DEB /* AppDelegate.swift */; };
 		526360A51DDB389800701DEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 526360A31DDB389800701DEB /* Main.storyboard */; };
 		526360A71DDB389800701DEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 526360A61DDB389800701DEB /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		52339CC31DDD0C9D00F2D395 /* CalendarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarTableViewController.swift; sourceTree = "<group>"; };
 		5263609A1DDB389700701DEB /* iBarber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBarber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5263609D1DDB389700701DEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		526360A41DDB389800701DEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -78,6 +80,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		52339CC51DDD0CB000F2D395 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				52992AA71DDC5A6A00552D1D /* 💇Cell.swift */,
+				526360BF1DDB42D500701DEB /* 💵Cell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		52339CC61DDD0CC700F2D395 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				52992AA11DDBA7C200552D1D /* 💯.swift */,
+				526360B61DDB42D500701DEB /* 💇.swift */,
+				526360B71DDB42D500701DEB /* 💵.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		52339CC71DDD0D0700F2D395 /* ClientControllers */ = {
+			isa = PBXGroup;
+			children = (
+				526360BA1DDB42D500701DEB /* AddClientViewController.swift */,
+				526360BC1DDB42D500701DEB /* clientTableViewController.swift */,
+				52992AA31DDC53B500552D1D /* ClientDetailViewController.swift */,
+			);
+			name = ClientControllers;
+			sourceTree = "<group>";
+		};
+		52339CC81DDD0D1B00F2D395 /* IncomeControllers */ = {
+			isa = PBXGroup;
+			children = (
+				526360B91DDB42D500701DEB /* AddIncomeViewController.swift */,
+				526360E51DDB4AE100701DEB /* incomeTableViewController.swift */,
+			);
+			name = IncomeControllers;
+			sourceTree = "<group>";
+		};
+		52339CC91DDD0D4900F2D395 /* CalendarControllers */ = {
+			isa = PBXGroup;
+			children = (
+				52339CC31DDD0C9D00F2D395 /* CalendarTableViewController.swift */,
+			);
+			name = CalendarControllers;
+			sourceTree = "<group>";
+		};
 		526360911DDB389700701DEB = {
 			isa = PBXGroup;
 			children = (
@@ -100,16 +148,11 @@
 		5263609C1DDB389700701DEB /* iBarber */ = {
 			isa = PBXGroup;
 			children = (
-				52992AA11DDBA7C200552D1D /* 💯.swift */,
-				526360B61DDB42D500701DEB /* 💇.swift */,
-				526360B71DDB42D500701DEB /* 💵.swift */,
-				526360B91DDB42D500701DEB /* AddIncomeViewController.swift */,
-				526360BA1DDB42D500701DEB /* AddClientViewController.swift */,
-				526360BC1DDB42D500701DEB /* clientTableViewController.swift */,
-				52992AA31DDC53B500552D1D /* ClientDetailViewController.swift */,
-				526360E51DDB4AE100701DEB /* incomeTableViewController.swift */,
-				52992AA71DDC5A6A00552D1D /* 💇Cell.swift */,
-				526360BF1DDB42D500701DEB /* 💵Cell.swift */,
+				52339CC91DDD0D4900F2D395 /* CalendarControllers */,
+				52339CC81DDD0D1B00F2D395 /* IncomeControllers */,
+				52339CC71DDD0D0700F2D395 /* ClientControllers */,
+				52339CC61DDD0CC700F2D395 /* Model */,
+				52339CC51DDD0CB000F2D395 /* Cells */,
 				5263609D1DDB389700701DEB /* AppDelegate.swift */,
 				526360A31DDB389800701DEB /* Main.storyboard */,
 				526360A61DDB389800701DEB /* Assets.xcassets */,
@@ -198,6 +241,7 @@
 				526360C61DDB42D500701DEB /* clientTableViewController.swift in Sources */,
 				526360C11DDB42D500701DEB /* 💵.swift in Sources */,
 				52992AA41DDC53B500552D1D /* ClientDetailViewController.swift in Sources */,
+				52339CC41DDD0C9D00F2D395 /* CalendarTableViewController.swift in Sources */,
 				52992AA21DDBA7C200552D1D /* 💯.swift in Sources */,
 				526360C01DDB42D500701DEB /* 💇.swift in Sources */,
 				52992AA81DDC5A6A00552D1D /* 💇Cell.swift in Sources */,

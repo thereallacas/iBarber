@@ -32,7 +32,6 @@ extension AddClientViewController: UIImagePickerControllerDelegate, UINavigation
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage
         clientImageView.image = selectedImage
-        imagePath="NOIMAGE"
         dismiss(animated: true, completion: nil)
     }
 }
@@ -41,7 +40,7 @@ class AddClientViewController: UIViewController {
     @IBAction func SelectImageTouchUpInside(_ sender: AnyObject) {
         let picker = UIImagePickerController()
         picker.delegate = self
-        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: {
             action in
             picker.sourceType = .camera
@@ -54,16 +53,6 @@ class AddClientViewController: UIViewController {
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
-    }
-    
-    func saveImageDocumentDirectory(){
-        let fileManager = FileManager.default
-        let paths = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent("ClientPics/"+inputNameTextField.text!+"client.jpg")
-        let image = clientImageView.image
-        print(paths)
-        imagePath = paths
-        let imageData = UIImageJPEGRepresentation(image!, 0.5)
-        fileManager.createFile(atPath: paths as String, contents: imageData, attributes: nil)
     }
     
     @IBAction func clientSaveButtonTouchUpInside(_ sender: AnyObject) {
@@ -87,12 +76,14 @@ class AddClientViewController: UIViewController {
             alertController.addAction(okAction)
             self.present(alertController, animated: true, completion: nil)
         }
-        
-        if (clientImageView.image==nil){
-            imagePath = "NOIMAGE"
-        }
         else {
-        saveImageDocumentDirectory()
+            if (clientImageView.image==nil){
+                imagePath = "NOIMAGE"
+            }
+            else{
+                imagePath = inputNameTextField.text!+"client.jpg"
+                saveImageDocumentDirectory(filename: imagePath)
+            }
         let name = inputNameTextField.text!
         let desc = AddClientDescriptionTextView.text!
         let phonenumber = Int(inputPhoneNumberTextField.text!)!
@@ -115,6 +106,9 @@ class AddClientViewController: UIViewController {
     @IBAction func onBackgroundTouchUpInside(_ sender: AnyObject) {
         view.endEditing(true)
     }
+    
+    
+    @IBOutlet weak var selectImageButton: UIButton!
   
     @IBOutlet weak var TopConstraint: NSLayoutConstraint!
     
@@ -130,6 +124,35 @@ class AddClientViewController: UIViewController {
     @IBOutlet weak var clientImageView: UIImageView!
     
     var imagePath: String!
+    
+    //MARK - IMAGESAVING
+    
+    func saveImageDocumentDirectory(filename: String){
+        let fileManager = FileManager.default
+        let paths = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(filename)
+        let image = clientImageView.image
+        print(paths)
+        let imageData = UIImageJPEGRepresentation(image!, 0.5)
+        fileManager.createFile(atPath: paths as String, contents: imageData, attributes: nil)
+    }
+    
+    func getDirectoryPath() -> String {
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        let documentsDirectory = paths[0]
+        return documentsDirectory
+    }
+    
+    func getImage(filename: String)-> UIImage{
+        let fileManager = FileManager.default
+        let imagePath = (self.getDirectoryPath() as NSString).appendingPathComponent(filename)
+        if fileManager.fileExists(atPath: imagePath){
+            return UIImage(contentsOfFile: imagePath)!
+        }
+        else{
+            print("No Image")
+            return UIImage(named: "samplepic")!
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

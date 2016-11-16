@@ -57,7 +57,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eRz-Ug-VN4" id="xU8-SS-NXd">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mKV-Ky-5Vx">
@@ -197,10 +197,10 @@
                                                                 </constraints>
                                                                 <prototypes>
                                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="17" id="9IH-bV-hEY">
-                                                                        <rect key="frame" x="0.0" y="28" width="200" height="17"/>
+                                                                        <rect key="frame" x="0.0" y="28" width="1000" height="17"/>
                                                                         <autoresizingMask key="autoresizingMask"/>
                                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9IH-bV-hEY" id="IJa-bW-7fd">
-                                                                            <frame key="frameInset" width="200" height="17"/>
+                                                                            <frame key="frameInset" width="1000" height="17"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                         </tableViewCellContentView>
                                                                     </tableViewCell>
@@ -322,7 +322,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8hM-Fi-d1t" id="pjO-GT-Lay">
-                                    <frame key="frameInset" width="375" height="64"/>
+                                    <frame key="frameInset" width="375" height="65"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BVB-pp-PgZ">
@@ -516,6 +516,7 @@
                         <outlet property="clientImageView" destination="NUo-Jb-rSo" id="SXe-hA-vsa"/>
                         <outlet property="inputNameTextField" destination="McV-oo-clV" id="VNd-Uo-H6Y"/>
                         <outlet property="inputPhoneNumberTextField" destination="KWa-xu-JFQ" id="eAG-UA-NAy"/>
+                        <outlet property="selectImageButton" destination="S1d-kK-1DN" id="les-dW-ILk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nSo-W0-R6d" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -534,7 +535,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="samplepic" translatesAutoresizingMaskIntoConstraints="NO" id="APN-Rj-n4e">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="samplepic" translatesAutoresizingMaskIntoConstraints="NO" id="APN-Rj-n4e">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="NOn-Bc-UDC"/>
                                     <constraint firstAttribute="height" constant="300" id="irz-TB-ygy"/>
@@ -567,6 +568,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YK5-5w-5Td">
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Book in Calendar"/>
+                                <connections>
+                                    <segue destination="V8e-ov-Eka" kind="show" id="LVG-vj-isP"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -594,6 +598,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k6h-ck-Nnu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1972" y="82.3088455772114"/>
+        </scene>
+        <!--Calendar List View Controller-->
+        <scene sceneID="Ynt-OS-rb1">
+            <objects>
+                <tableViewController id="V8e-ov-Eka" userLabel="Calendar List View Controller" customClass="CalendarTableViewController" customModule="iBarber" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="p1i-2O-S8L">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="calendarCell" id="nSk-RH-sQ4">
+                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nSk-RH-sQ4" id="Mr7-mu-hhg">
+                                    <frame key="frameInset" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="V8e-ov-Eka" id="AF9-Ip-tGA"/>
+                            <outlet property="delegate" destination="V8e-ov-Eka" id="Wyc-vj-vrY"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="calendarsTableView" destination="p1i-2O-S8L" id="SO3-mG-81q"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cBE-jX-63K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2985" y="82"/>
         </scene>
         <!--Prices-->
         <scene sceneID="UnG-ib-53f">

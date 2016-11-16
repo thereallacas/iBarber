@@ -31,25 +31,28 @@ class ClientDetailViewController: UIViewController {
             clientImage.image = UIImage(named: "samplepic")
         }
         else{
-            getImage()
+            clientImage.image = getImage(filename: selectedClient.picture)
         }
     }
+    
     func getDirectoryPath() -> String {
         let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         let documentsDirectory = paths[0]
         return documentsDirectory
     }
     
-    func getImage(){
+    func getImage(filename: String)-> UIImage{
         let fileManager = FileManager.default
-        let imagePath = selectedClient.picture
-        print(imagePath)
+        let imagePath = (self.getDirectoryPath() as NSString).appendingPathComponent(filename)
         if fileManager.fileExists(atPath: imagePath){
-            clientImage.image = UIImage(contentsOfFile: imagePath)
-        }else{
-            clientImage.image = UIImage(named: "samplepic")
+            return UIImage(contentsOfFile: imagePath)!
+        }
+        else{
+            print("No Image")
+            return UIImage(named: "samplepic")!
         }
     }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
