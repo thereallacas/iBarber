@@ -20,6 +20,12 @@ class ClientDetailViewController: UIViewController {
     
     @IBOutlet weak var bookinCalendarButton: UIButton!
     
+    
+    @IBAction func CallClient(_ sender: AnyObject) {
+        let phoneNumber: String = "telprompt://".appending((clientPhoneNumberButton.titleLabel?.text!)!)
+        UIApplication.shared.open(NSURL(string:phoneNumber)! as URL)
+    }
+    
     var selectedClient : 💇!
     
     override func viewDidLoad() {
@@ -43,7 +49,7 @@ class ClientDetailViewController: UIViewController {
     
     func getImage(filename: String)-> UIImage{
         let fileManager = FileManager.default
-        let imagePath = (self.getDirectoryPath() as NSString).appendingPathComponent(filename)
+        let imagePath = (self.getDirectoryPath() as NSString).appendingPathComponent(clientNameLabel.text!+"client.jpg")
         if fileManager.fileExists(atPath: imagePath){
             return UIImage(contentsOfFile: imagePath)!
         }
@@ -60,14 +66,14 @@ class ClientDetailViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if (segue.identifier == "showCalendars"){
+            let calendarstableviewcontroller = segue.destination as! CalendarTableViewController
+            calendarstableviewcontroller.selectedClient = selectedClient }
     }
-    */
 
 }

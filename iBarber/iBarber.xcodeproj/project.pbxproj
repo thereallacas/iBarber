@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		52339CC41DDD0C9D00F2D395 /* CalendarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52339CC31DDD0C9D00F2D395 /* CalendarTableViewController.swift */; };
+		52339CCB1DDDBADE00F2D395 /* CalendarEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52339CCA1DDDBADE00F2D395 /* CalendarEventsViewController.swift */; };
 		5263609E1DDB389700701DEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5263609D1DDB389700701DEB /* AppDelegate.swift */; };
 		526360A51DDB389800701DEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 526360A31DDB389800701DEB /* Main.storyboard */; };
 		526360A71DDB389800701DEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 526360A61DDB389800701DEB /* Assets.xcassets */; };
@@ -46,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		52339CC31DDD0C9D00F2D395 /* CalendarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarTableViewController.swift; sourceTree = "<group>"; };
+		52339CCA1DDDBADE00F2D395 /* CalendarEventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarEventsViewController.swift; sourceTree = "<group>"; };
 		5263609A1DDB389700701DEB /* iBarber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBarber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5263609D1DDB389700701DEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		526360A41DDB389800701DEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				52339CC31DDD0C9D00F2D395 /* CalendarTableViewController.swift */,
+				52339CCA1DDDBADE00F2D395 /* CalendarEventsViewController.swift */,
 			);
 			name = CalendarControllers;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				526360E61DDB4AE100701DEB /* incomeTableViewController.swift in Sources */,
 				526360C91DDB42D500701DEB /* 💵Cell.swift in Sources */,
 				526360C41DDB42D500701DEB /* AddClientViewController.swift in Sources */,
+				52339CCB1DDDBADE00F2D395 /* CalendarEventsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

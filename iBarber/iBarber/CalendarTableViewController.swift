@@ -13,6 +13,8 @@ class CalendarTableViewController: UITableViewController {
 
     @IBOutlet var calendarsTableView: UITableView!
     
+    var selectedClient : 💇!
+    
     let eventStore = EKEventStore()
     
     var calendars: [EKCalendar]?
@@ -43,16 +45,14 @@ class CalendarTableViewController: UITableViewController {
             (accessGranted: Bool, error: Error?) in
             
             if accessGranted == true {
-                DispatchQueue.main.async(execute: {
                     self.loadCalendars()
                     self.refreshTableView()
-                })
             } else {
                 let alertController = UIAlertController(title: "Error", message: "You have to give permission to the iBarber to access your Calendars", preferredStyle: .alert)
                 alertController.addAction(UIAlertAction(title: "Go to settings", style: .default, handler: {
                     action in
                     let openSettingsUrl = URL(string: UIApplicationOpenSettingsURLString)
-                    UIApplication.shared.openURL(openSettingsUrl!)
+                    UIApplication.shared.open(openSettingsUrl!)
                 }))
                 alertController.addAction(UIAlertAction(title: "I don't want to use this feature", style: .cancel, handler: {
                     action in
@@ -68,11 +68,8 @@ class CalendarTableViewController: UITableViewController {
     }
     
     func refreshTableView() {
-        calendarsTableView.isHidden = false
         calendarsTableView.reloadData()
     }
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -109,14 +106,14 @@ class CalendarTableViewController: UITableViewController {
         
         if let calendars = self.calendars {
             let calendarName = calendars[(indexPath as NSIndexPath).row].title
+            let calendarColor = calendars[(indexPath as NSIndexPath).row].cgColor
             cell.textLabel?.text = calendarName
+            cell.backgroundColor = UIColor(cgColor: calendarColor)
         } else {
             cell.textLabel?.text = "Unknown Calendar Name"
         }
         
         return cell
-    }
-
     }
 
     /*
@@ -154,13 +151,18 @@ class CalendarTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if (segue.identifier == "showCalendarEvents"){
+        let calendareventviewcontroller = segue.destination as! CalendarEventsViewController
+            let selectedIndexPath = calendarsTableView.indexPathForSelectedRow!
+            calendareventviewcontroller.calendar = calendars?[(selectedIndexPath as NSIndexPath).row] 
+            calendareventviewcontroller.selectedClient = selectedClient
+        }
     }
-    */
+ 
 
+}
