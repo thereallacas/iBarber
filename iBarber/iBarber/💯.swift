@@ -15,5 +15,4 @@ class 💯: Object {
     override static func primaryKey() -> String? {
         return "operation"
     }
-    
 }

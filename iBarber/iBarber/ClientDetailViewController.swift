@@ -26,10 +26,13 @@ class ClientDetailViewController: UIViewController {
         UIApplication.shared.open(NSURL(string:phoneNumber)! as URL)
     }
     
+    @IBOutlet weak var scview: UIScrollView!
+    
     var selectedClient : 💇!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        scview.autoresizingMask = UIViewAutoresizing.flexibleHeight
         clientNameLabel.text = selectedClient.name
         clientPhoneNumberButton.setTitle(String(selectedClient.phoneNumber), for: .normal)
         clientDescriptionTextField.text = selectedClient.desc

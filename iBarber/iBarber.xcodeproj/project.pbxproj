@@ -24,10 +24,12 @@
 		526360E21DDB49B700701DEB /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526360DF1DDB49B700701DEB /* RealmSwift.framework */; };
 		526360E31DDB49B700701DEB /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 526360DF1DDB49B700701DEB /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		526360E61DDB4AE100701DEB /* incomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526360E51DDB4AE100701DEB /* incomeTableViewController.swift */; };
+		528B25591DE5F166004FFE75 /* AddtoPriceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528B25581DE5F166004FFE75 /* AddtoPriceListViewController.swift */; };
 		52992AA01DDB543F00552D1D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52992A9F1DDB543F00552D1D /* LaunchScreen.storyboard */; };
 		52992AA21DDBA7C200552D1D /* 💯.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52992AA11DDBA7C200552D1D /* 💯.swift */; };
 		52992AA41DDC53B500552D1D /* ClientDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52992AA31DDC53B500552D1D /* ClientDetailViewController.swift */; };
 		52992AA81DDC5A6A00552D1D /* 💇Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52992AA71DDC5A6A00552D1D /* 💇Cell.swift */; };
+		52A5FCD51DE5ADE70066BD58 /* PricesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A5FCD41DE5ADE70066BD58 /* PricesTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -63,10 +65,12 @@
 		526360DE1DDB49B700701DEB /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "swift-3.0/Realm.framework"; sourceTree = "<group>"; };
 		526360DF1DDB49B700701DEB /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "swift-3.0/RealmSwift.framework"; sourceTree = "<group>"; };
 		526360E51DDB4AE100701DEB /* incomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = incomeTableViewController.swift; sourceTree = "<group>"; };
+		528B25581DE5F166004FFE75 /* AddtoPriceListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddtoPriceListViewController.swift; sourceTree = "<group>"; };
 		52992A9F1DDB543F00552D1D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52992AA11DDBA7C200552D1D /* 💯.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "💯.swift"; sourceTree = "<group>"; };
 		52992AA31DDC53B500552D1D /* ClientDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientDetailViewController.swift; sourceTree = "<group>"; };
 		52992AA71DDC5A6A00552D1D /* 💇Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "💇Cell.swift"; sourceTree = "<group>"; };
+		52A5FCD41DE5ADE70066BD58 /* PricesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PricesTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +155,7 @@
 		5263609C1DDB389700701DEB /* iBarber */ = {
 			isa = PBXGroup;
 			children = (
+				52A5FCD31DE5ADBA0066BD58 /* Prices */,
 				52339CC91DDD0D4900F2D395 /* CalendarControllers */,
 				52339CC81DDD0D1B00F2D395 /* IncomeControllers */,
 				52339CC71DDD0D0700F2D395 /* ClientControllers */,
@@ -163,6 +168,15 @@
 				526360AB1DDB389800701DEB /* Info.plist */,
 			);
 			path = iBarber;
+			sourceTree = "<group>";
+		};
+		52A5FCD31DE5ADBA0066BD58 /* Prices */ = {
+			isa = PBXGroup;
+			children = (
+				52A5FCD41DE5ADE70066BD58 /* PricesTableViewController.swift */,
+				528B25581DE5F166004FFE75 /* AddtoPriceListViewController.swift */,
+			);
+			name = Prices;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,6 +257,7 @@
 				5263609E1DDB389700701DEB /* AppDelegate.swift in Sources */,
 				526360C61DDB42D500701DEB /* clientTableViewController.swift in Sources */,
 				526360C11DDB42D500701DEB /* 💵.swift in Sources */,
+				52A5FCD51DE5ADE70066BD58 /* PricesTableViewController.swift in Sources */,
 				52992AA41DDC53B500552D1D /* ClientDetailViewController.swift in Sources */,
 				52339CC41DDD0C9D00F2D395 /* CalendarTableViewController.swift in Sources */,
 				52992AA21DDBA7C200552D1D /* 💯.swift in Sources */,
@@ -250,6 +265,7 @@
 				52992AA81DDC5A6A00552D1D /* 💇Cell.swift in Sources */,
 				526360C31DDB42D500701DEB /* AddIncomeViewController.swift in Sources */,
 				526360E61DDB4AE100701DEB /* incomeTableViewController.swift in Sources */,
+				528B25591DE5F166004FFE75 /* AddtoPriceListViewController.swift in Sources */,
 				526360C91DDB42D500701DEB /* 💵Cell.swift in Sources */,
 				526360C41DDB42D500701DEB /* AddClientViewController.swift in Sources */,
 				52339CCB1DDDBADE00F2D395 /* CalendarEventsViewController.swift in Sources */,

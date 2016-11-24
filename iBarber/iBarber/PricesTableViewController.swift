@@ -1,21 +1,19 @@
 //
-//  clientTableViewController.swift
+//  PricesTableViewController.swift
 //  iBarber
 //
-//  Created by Macbook Pro on 14/11/16.
+//  Created by Macbook Pro on 23/11/16.
 //  Copyright © 2016 Macbook Pro. All rights reserved.
 //
 
 import UIKit
 import RealmSwift
 
-class clientTableViewController: UITableViewController {
+class PricesTableViewController: UITableViewController {
 
-    var 💇💇💇 : Results<💇>!
+    var 💯💯💯 : Results<💯>!
     
-    @IBOutlet var clientTableView: UITableView!
-    
-    
+    @IBOutlet var priceTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,16 +26,15 @@ class clientTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        readclientAndUpdateUI()
-    }
-    
-    
-    func readclientAndUpdateUI(){
-        💇💇💇 = 🗄.objects(💇.self)
-        self.clientTableView.setEditing(false, animated: true)
-        self.clientTableView.reloadData()
+        readPriceAndUpdateUI()
     }
 
+    func readPriceAndUpdateUI(){
+        💯💯💯 = 🗄.objects(💯.self)
+        self.priceTableView.setEditing(false, animated: true)
+        self.priceTableView.reloadData()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -52,33 +49,35 @@ class clientTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 💇💇💇.count
+        return  💯💯💯.count
     }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "showClientDetail", sender: self.💇💇💇[indexPath.row])
-    }
+
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ClientCell") as! 💇Cell
-        let client = self.💇💇💇[indexPath.row]
-        cell.nameLabel.text = client.name
-        cell.PhoneLabel.text = String(client.phoneNumber)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "priceCell", for: indexPath)
+        let price = self.💯💯💯[indexPath.row]
+        cell.textLabel?.text = price.operation
+        cell.detailTextLabel?.text = String(price.price)+" Ft"
         return cell
     }
     
-    // MARK: - Navigation
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if (segue.identifier == "showClientDetail"){
-        let clientDetailViewController = segue.destination as! ClientDetailViewController
-            clientDetailViewController.selectedClient = sender as! 💇 }
-        if (segue.identifier == "showAddClientDetail"){
-            //canidie
+
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            
+            let priceToBeDeleted = 💯💯💯[indexPath.row]
+            
+            try!🗄.write({ () -> Void in
+                🗄.delete(priceToBeDeleted)
+            })
+            
+            priceTableView.deleteRows(at: [indexPath], with: .fade)
+            self.readPriceAndUpdateUI()
         }
     }
 
+    
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -111,6 +110,16 @@ class clientTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the item to be re-orderable.
         return true
+    }
+    */
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
     }
     */
 

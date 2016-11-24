@@ -76,7 +76,7 @@ class AddClientViewController: UIViewController {
             alertController.addAction(okAction)
             self.present(alertController, animated: true, completion: nil)
         }
-        else {
+        if (inputNameTextField.text! != "" && inputPhoneNumberTextField.text! != "" && Int(inputPhoneNumberTextField.text!) != nil) {
             if (clientImageView.image==nil){
                 imagePath = "NOIMAGE"
             }
