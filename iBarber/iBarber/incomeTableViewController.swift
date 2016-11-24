@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import MessageUI
 
 extension Date {
     func dayOfWeek() -> String? {
@@ -18,6 +19,27 @@ extension Date {
     }
 }
 
+extension incomeTableViewController: MFMailComposeViewControllerDelegate{
+    func configuredMailComposeViewController() -> MFMailComposeViewController {
+        let mailComposerVC = MFMailComposeViewController()
+        mailComposerVC.mailComposeDelegate = self // Extremely important to set the --mailComposeDelegate-- property, NOT the --delegate-- property
+        mailComposerVC.setToRecipients(["lacas.shark@gmail.com"])
+        mailComposerVC.setSubject("MYINCOME")
+        mailComposerVC.setMessageBody("Total sum: "+calculateTotalofTheLast24hour()+" Tips: "+calculateTipofTheLast24hour(), isHTML: false)
+        
+        return mailComposerVC
+    }
+    
+    func showSendMailErrorAlert() {
+        let sendMailErrorAlert = UIAlertView(title: "Could Not Send Email", message: "Your device could not send e-mail.  Please check e-mail configuration and try again.", delegate: self, cancelButtonTitle: "OK")
+        sendMailErrorAlert.show()
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
+        
+    }
+}
 
 class incomeTableViewController: UITableViewController {
     
@@ -27,8 +49,37 @@ class incomeTableViewController: UITableViewController {
     
     @IBOutlet var incomeTableView: UITableView!
     
+    @IBAction func Mailtome(_ sender: AnyObject) {
+        let mailComposeViewController = configuredMailComposeViewController()
+        if MFMailComposeViewController.canSendMail() {
+            self.present(mailComposeViewController, animated: true, completion: nil)
+        } else {
+            self.showSendMailErrorAlert()
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    func calculateTipofTheLast24hour()->String{
+        let to = NSDate()
+        let from = to.addingTimeInterval(-3600*24)
+        let allincomes = 🗄.objects(💵.self).filter("time > %@ AND time <= %@", from, to)
+        var total:Int = 0
+        for item in allincomes {
+            total = total + item.tip
+        }
+        return String(total)
+    }
+    func calculateTotalofTheLast24hour()->String{
+        let to = NSDate()
+        let from = to.addingTimeInterval(-3600*24)
+        let allincomes = 🗄.objects(💵.self).filter("time > %@ AND time <= %@", from, to)
+        var total:Int = 0
+        for item in allincomes {
+            total = total + item.total
+        }
+        return String(total)
     }
     
     func readincomeAndUpdateUI(){
@@ -58,7 +109,7 @@ class incomeTableViewController: UITableViewController {
         let day = calendar.component(.day, from: date)
         let month = calendar.component(.month, from: date)
         let year = calendar.component(.year, from: date)
-        return String(year)+"."+String(month)+"."+String(day)+", "+date.dayOfWeek()!
+        return String(year)+"."+String(month)+"."+String(day)+" "+date.dayOfWeek()!
     }
     
     override func didReceiveMemoryWarning() {

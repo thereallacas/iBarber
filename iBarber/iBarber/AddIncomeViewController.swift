@@ -31,6 +31,7 @@ extension AddIncomeViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedCell : UITableViewCell = nameSuggestionTableView.cellForRow(at: indexPath)!
         inputNameTextFieldForIncome.text = selectedCell.textLabel!.text!
+        tableView.isHidden=true
     }
 }
 
@@ -48,6 +49,7 @@ extension AddIncomeViewController: UITextFieldDelegate{
     
     func searchAutocompleteEntriesWithSubstring(substring: String)
     {
+        nameSuggestionTableView.isHidden=false
         autoComplete.removeAll(keepingCapacity: false)
         
         for key in autoCompletePossibilities {
@@ -82,14 +84,33 @@ extension AddIncomeViewController: UIPickerViewDataSource,UIPickerViewDelegate{
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectedOperation = pickerData[row]
         priceOfSelectedOperation = priceData[row]
-        pickerSelectionLabel.text = selectedOperation + ":" + String(priceOfSelectedOperation)
+        pickerSelectionLabel.text = selectedOperation + " : " + String(priceOfSelectedOperation)
     }
 }
 
 class AddIncomeViewController: UIViewController {
     
     @IBAction func incomeSaveButtonTouchUpInside(_ sender: AnyObject) {
-        
+        if (inputNameTextFieldForIncome.text=="" || inputMoneyTextField.text==""){
+            let alertController = UIAlertController(title: "Error", message: "One or more field is empty.", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
+                UIAlertAction in
+                NSLog("OK Pressed")
+            }
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
+        if (Int(inputMoneyTextField.text!)==nil){
+            let alertController = UIAlertController(title: "Error", message: "Invalid money format", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
+                UIAlertAction in
+                NSLog("OK Pressed")
+            }
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
+        if (inputNameTextFieldForIncome.text! != "" && inputMoneyTextField.text! != "" && Int(inputMoneyTextField.text!) != nil) {
+            
         let total = Int(inputMoneyTextField.text!)!
         let clientResult = 🗄.objects(💇.self).filter(NSPredicate(format: "name = %@", inputNameTextFieldForIncome.text!))
         
@@ -101,11 +122,12 @@ class AddIncomeViewController: UIViewController {
             client = clientResult.first!
         }
         
-        let income = 💵(value: ["operation": selectedOperation,"price":priceOfSelectedOperation,"date":NSDate.init(),"client":client, "total":total])
+        let income = 💵(value: ["operation": selectedOperation,"price":priceOfSelectedOperation,"date": NSDate(),"client":client, "total":total])
         
         try! 🗄.write {
             () -> Void in
             🗄.add(income)
+        }
         }
     }
  
@@ -125,8 +147,8 @@ class AddIncomeViewController: UIViewController {
     
     @IBOutlet weak var pickerSelectionLabel: UILabel!
     
-    let pickerData: [String] = ["Férfi vágás","Férfi mosás vágás","Női mosás,vágás,szárítás"]
-    let priceData: [Int] = [1460, 1880,3880]
+    var pickerData = [String]()
+    var priceData = [Int]()
 
     var constantForPortrait: CGFloat?
     var constantForLandScape: CGFloat?
@@ -134,34 +156,41 @@ class AddIncomeViewController: UIViewController {
     var selectedOperation: String = "Minta"
     var priceOfSelectedOperation : Int = 0
     
-    var autoCompletePossibilities = ["Hutter Iván", "Márkusné Eta", "Balog Erika", "Timár Laci", "Oláh Árpád", "Mészáros Lajos"]
+    var autoCompletePossibilities = [String]()
     var autoComplete = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        nameSuggestionTableView.isHidden=true
         nameSuggestionTableView.delegate = self
         inputNameTextFieldForIncome.delegate = self
         operationPickerView.delegate = self
         operationPickerView.dataSource = self
-        selectedOperation = pickerData[0]
-        priceOfSelectedOperation = priceData[0]
-        pickerSelectionLabel.text = pickerData[0]
+      
         constantForPortrait = TopConstraint.constant
         constantForLandScape = constantForPortrait!/4
-        print(constantForPortrait)
-        print(constantForLandScape)
-        autoCompletePossibilities = 🗄.objects(💇.self).value(forKey: "name") as! [String]
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+          print ("appeared")
+       
+        pickerData = 🗄.objects(💯.self).value(forKey: "operation") as! [String]
+        priceData = 🗄.objects(💯.self).value(forKey: "price") as! [Int]
+        operationPickerView.reloadAllComponents()
+        
+        selectedOperation = "Default"
+        priceOfSelectedOperation = 0
+        pickerSelectionLabel.text = "Default"
+        autoCompletePossibilities = 🗄.objects(💇.self).value(forKey: "name") as! [String]
         NotificationCenter.default.addObserver(self, selector: #selector(AddClientViewController.keyboardWillShow), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(AddClientViewController.keyboardWillHide), name: .UIKeyboardWillHide, object: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+      
         super.viewWillDisappear(animated)
+          print ("disappeared")
         NotificationCenter.default.removeObserver(self)
     }
     
@@ -178,7 +207,7 @@ class AddIncomeViewController: UIViewController {
                     }
                     else {
                         self.TopConstraint.constant = self.TopConstraint.constant +
-                            self.constantForLandScape!-self.TopConstraint.constant-keyboardSize.height/3
+                            self.constantForLandScape!-self.TopConstraint.constant-keyboardSize.height/2
                     }
                  })
             }

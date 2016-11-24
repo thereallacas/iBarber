@@ -19,8 +19,8 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="riC-c2-BjM" kind="relationship" relationship="viewControllers" id="Z92-5X-E9R"/>
                         <segue destination="BLC-Zb-SCx" kind="relationship" relationship="viewControllers" id="8Ny-hh-W1Z"/>
+                        <segue destination="riC-c2-BjM" kind="relationship" relationship="viewControllers" id="Z92-5X-E9R"/>
                         <segue destination="1Yh-8c-1Et" kind="relationship" relationship="viewControllers" id="ql7-pQ-mbQ"/>
                     </connections>
                 </tabBarController>
@@ -58,7 +58,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eRz-Ug-VN4" id="xU8-SS-NXd">
-                                    <frame key="frameInset" width="375" height="44"/>
+                                    <frame key="frameInset" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mKV-Ky-5Vx">
@@ -133,6 +133,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Income" id="BIA-pd-HDU">
+                        <barButtonItem key="leftBarButtonItem" image="report" id="6Sy-yN-WU7">
+                            <connections>
+                                <action selector="Mailtome:" destination="F3x-zy-FwJ" id="rwK-8k-bOa"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="6PM-E0-hpi">
                             <connections>
                                 <segue destination="Veo-6j-XZA" kind="show" id="PYU-zF-PER"/>
@@ -188,7 +193,7 @@
                                                                 </constraints>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
                                                                 <connections>
                                                                     <outlet property="delegate" destination="Veo-6j-XZA" id="Sv9-sC-K9p"/>
                                                                 </connections>
@@ -248,7 +253,7 @@
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
                                             </textField>
                                         </subviews>
                                         <variation key="heightClass=compact-widthClass=compact" axis="horizontal" spacing="20"/>
@@ -326,7 +331,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8hM-Fi-d1t" id="pjO-GT-Lay">
-                                    <frame key="frameInset" width="375" height="65"/>
+                                    <frame key="frameInset" width="375" height="64"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BVB-pp-PgZ">
@@ -414,7 +419,7 @@
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S1d-kK-1DN">
                                                 <state key="normal" title="Select Image"/>
@@ -442,7 +447,7 @@
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHV-Gy-8tP">
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -457,7 +462,7 @@
                                                 </constraints>
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                             </textView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -539,7 +544,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cPt-Yb-Ua0">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cPt-Yb-Ua0">
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tpZ-Nj-JSa">
                                         <subviews>
@@ -598,7 +603,7 @@
                                         <constraints>
                                             <constraint firstItem="JK9-2k-Wc4" firstAttribute="centerX" secondItem="tpZ-Nj-JSa" secondAttribute="centerX" id="4py-2p-sL5"/>
                                             <constraint firstItem="APN-Rj-n4e" firstAttribute="top" secondItem="tpZ-Nj-JSa" secondAttribute="top" constant="10" id="7z3-kV-wrH">
-                                                <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                                                <variation key="heightClass=regular-widthClass=regular" constant="20"/>
                                             </constraint>
                                             <constraint firstItem="YK5-5w-5Td" firstAttribute="centerX" secondItem="tpZ-Nj-JSa" secondAttribute="centerX" id="8zO-Ll-ANb"/>
                                             <constraint firstItem="hHh-zh-GCq" firstAttribute="top" secondItem="1QT-Wz-nWo" secondAttribute="bottom" id="SHD-hL-5ED">
@@ -630,7 +635,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="cPt-Yb-Ua0" firstAttribute="centerX" secondItem="WOH-Ma-lgB" secondAttribute="centerX" id="5pV-PX-NnQ"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="cPt-Yb-Ua0" secondAttribute="bottom" constant="50" id="8GE-11-uQu"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="cPt-Yb-Ua0" secondAttribute="bottom" id="8GE-11-uQu"/>
                             <constraint firstItem="cPt-Yb-Ua0" firstAttribute="top" secondItem="WOH-Ma-lgB" secondAttribute="topMargin" id="PTv-iD-Zyw"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cPt-Yb-Ua0" secondAttribute="trailing" id="Qau-Ja-mIK"/>
                             <constraint firstItem="cPt-Yb-Ua0" firstAttribute="leading" secondItem="WOH-Ma-lgB" secondAttribute="leadingMargin" id="uTp-IA-RPa"/>
@@ -663,7 +668,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nSk-RH-sQ4" id="Mr7-mu-hhg">
-                                    <frame key="frameInset" width="375" height="44"/>
+                                    <frame key="frameInset" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -698,18 +703,18 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IAq-Ar-8Kv" id="790-z3-Raf">
-                                    <frame key="frameInset" width="375" height="43.5"/>
+                                    <frame key="frameInset" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nA8-R5-pWP">
-                                            <frame key="frameInset" minX="15" minY="12" width="33.5" height="20.5"/>
+                                            <frame key="frameInset" minX="15" minY="11" width="34" height="21"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Zbn-Pz-St5">
-                                            <frame key="frameInset" minX="316" minY="12" width="44" height="20.5"/>
+                                            <frame key="frameInset" minX="316" minY="11" width="44" height="21"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -759,18 +764,18 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3sz-Cv-kGK" id="CWw-jM-8W4">
-                                    <frame key="frameInset" width="375" height="43.5"/>
+                                    <frame key="frameInset" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iOf-Yj-HVe">
-                                            <frame key="frameInset" minX="15" minY="5" width="33.5" height="20.5"/>
+                                            <frame key="frameInset" minX="15" minY="4" width="34" height="21"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZDv-CC-Eo0">
-                                            <frame key="frameInset" minX="15" minY="25.5" width="44" height="14.5"/>
+                                            <frame key="frameInset" minX="15" minY="25" width="44" height="15"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
@@ -808,15 +813,15 @@
                         <viewControllerLayoutGuide type="top" id="odg-nu-yUe"/>
                         <viewControllerLayoutGuide type="bottom" id="hoN-oQ-TeL"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="XwR-Vq-Shn">
+                    <view key="view" contentMode="scaleToFill" id="XwR-Vq-Shn" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wRR-zz-bBJ">
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="TeS-44-1VM">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TeS-44-1VM">
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of the operation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3TL-ie-Alb">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3TL-ie-Alb">
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -832,7 +837,7 @@
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -852,26 +857,34 @@
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="BUo-1M-PLz">
+                                        <variation key="heightClass=compact-widthClass=compact" constant="100"/>
+                                        <variation key="heightClass=compact-widthClass=regular" constant="100"/>
+                                    </constraint>
                                     <constraint firstAttribute="width" constant="300" id="ig9-Ze-8nH">
                                         <variation key="heightClass=compact-widthClass=compact" constant="600"/>
                                     </constraint>
                                 </constraints>
                                 <variation key="heightClass=compact-widthClass=compact" axis="horizontal" distribution="fillProportionally"/>
+                                <variation key="heightClass=compact-widthClass=regular" axis="vertical"/>
                                 <variation key="heightClass=regular-widthClass=compact" spacing="50"/>
                                 <variation key="heightClass=regular-widthClass=regular" spacing="50"/>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wRR-zz-bBJ" firstAttribute="centerX" secondItem="XwR-Vq-Shn" secondAttribute="centerX" id="Kej-wZ-SGE"/>
-                            <constraint firstItem="wRR-zz-bBJ" firstAttribute="centerY" secondItem="XwR-Vq-Shn" secondAttribute="centerY" id="h4F-aN-Lid"/>
+                            <constraint firstItem="wRR-zz-bBJ" firstAttribute="centerX" secondItem="XwR-Vq-Shn" secondAttribute="centerX" id="CQB-Dt-K9U"/>
+                            <constraint firstItem="wRR-zz-bBJ" firstAttribute="top" secondItem="odg-nu-yUe" secondAttribute="bottom" constant="20" id="m0x-f7-jo5"/>
                         </constraints>
+                        <connections>
+                            <action selector="ONTOUCHUPINSIDE:" destination="3Dh-yb-qog" eventType="touchUpInside" id="xUw-xd-EEU"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Add to Pricelist" id="q3c-PW-Cg1">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="pmP-Qy-z4m">
@@ -881,6 +894,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="MYCONSTRAINT" destination="m0x-f7-jo5" id="t1p-BY-kNh"/>
                         <outlet property="addpricelistnametextfield" destination="Ws0-8u-dW4" id="FTI-Ld-E7H"/>
                         <outlet property="addpricelistpricetextfield" destination="ePp-VY-lQx" id="di8-gQ-IIZ"/>
                     </connections>
@@ -894,6 +908,7 @@
         <image name="clienttabicon" width="25" height="25"/>
         <image name="incometabicon" width="25" height="25"/>
         <image name="prices" width="25" height="25"/>
+        <image name="report" width="29" height="29"/>
         <image name="samplepic" width="85" height="85"/>
     </resources>
     <inferredMetricsTieBreakers>

@@ -11,6 +11,13 @@ import UIKit
 class AddtoPriceListViewController: UIViewController {
 
     
+    @IBAction func ONTOUCHUPINSIDE(_ sender: AnyObject) {
+        view.endEditing(true)
+    }
+    @IBOutlet weak var MYCONSTRAINT: NSLayoutConstraint!
+    
+
+    
     @IBOutlet weak var addpricelistnametextfield: UITextField!
     
     @IBOutlet weak var addpricelistpricetextfield: UITextField!
@@ -38,7 +45,7 @@ class AddtoPriceListViewController: UIViewController {
             self.present(alertController, animated: true, completion: nil)
         }
         if (Int(addpricelistpricetextfield.text!)==nil){
-            let alertController = UIAlertController(title: "Error", message: "Invalid phone number format", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Error", message: "Invalid price format", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
                 UIAlertAction in
                 NSLog("OK Pressed")
@@ -60,6 +67,9 @@ class AddtoPriceListViewController: UIViewController {
         }
         }
     }
+ 
+    
+   
     
 
     /*
