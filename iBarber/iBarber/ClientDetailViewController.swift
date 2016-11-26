@@ -34,7 +34,7 @@ class ClientDetailViewController: UIViewController {
         super.viewDidLoad()
         scview.autoresizingMask = UIViewAutoresizing.flexibleHeight
         clientNameLabel.text = selectedClient.name
-        clientPhoneNumberButton.setTitle(String(selectedClient.phoneNumber), for: .normal)
+        clientPhoneNumberButton.setTitle(selectedClient.phoneNumber, for: .normal)
         clientDescriptionTextField.text = selectedClient.desc
         if (selectedClient.picture=="NOIMAGE"){
             clientImage.image = UIImage(named: "samplepic")

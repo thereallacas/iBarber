@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5216A15B1DE79E8F00ECD0C8 /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5216A15A1DE79E8F00ECD0C8 /* AddEventViewController.swift */; };
 		52339CC41DDD0C9D00F2D395 /* CalendarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52339CC31DDD0C9D00F2D395 /* CalendarTableViewController.swift */; };
 		52339CCB1DDDBADE00F2D395 /* CalendarEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52339CCA1DDDBADE00F2D395 /* CalendarEventsViewController.swift */; };
 		5263609E1DDB389700701DEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5263609D1DDB389700701DEB /* AppDelegate.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5216A15A1DE79E8F00ECD0C8 /* AddEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
 		52339CC31DDD0C9D00F2D395 /* CalendarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarTableViewController.swift; sourceTree = "<group>"; };
 		52339CCA1DDDBADE00F2D395 /* CalendarEventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarEventsViewController.swift; sourceTree = "<group>"; };
 		5263609A1DDB389700701DEB /* iBarber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBarber.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +131,7 @@
 			children = (
 				52339CC31DDD0C9D00F2D395 /* CalendarTableViewController.swift */,
 				52339CCA1DDDBADE00F2D395 /* CalendarEventsViewController.swift */,
+				5216A15A1DE79E8F00ECD0C8 /* AddEventViewController.swift */,
 			);
 			name = CalendarControllers;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5263609E1DDB389700701DEB /* AppDelegate.swift in Sources */,
+				5216A15B1DE79E8F00ECD0C8 /* AddEventViewController.swift in Sources */,
 				526360C61DDB42D500701DEB /* clientTableViewController.swift in Sources */,
 				526360C11DDB42D500701DEB /* 💵.swift in Sources */,
 				52A5FCD51DE5ADE70066BD58 /* PricesTableViewController.swift in Sources */,

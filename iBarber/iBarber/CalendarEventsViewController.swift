@@ -19,8 +19,9 @@ class CalendarEventsViewController: UITableViewController {
     func loadEvents() {
         
         // Create start and end date NSDate instances to build a predicate for which events to select
-        let today = Date()
-        let endDate = today.addingTimeInterval(10000000)
+        var today = Date()
+        today = today.addingTimeInterval(-10000)
+        let endDate = today.addingTimeInterval(100000)
         
         let eventStore = EKEventStore()
             
@@ -45,6 +46,14 @@ class CalendarEventsViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
+    
+    
+    @IBOutlet var tableview: UITableView!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        loadEvents()
+        tableview.reloadData()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -73,7 +82,7 @@ class CalendarEventsViewController: UITableViewController {
 
         let startcomponents = Calendar.current.dateComponents([.month,.day,.minute,.hour], from: (event?.startDate)!)
         let endcomponents = Calendar.current.dateComponents([.minute,.hour], from: (event?.endDate)!)
-        let startdatetext = String(describing: startcomponents.month!)+" "+String(describing: startcomponents.day!)+" "+String(describing: startcomponents.hour!)+":"+String(describing: startcomponents.minute!)
+        let startdatetext = String(describing: startcomponents.month!)+"."+String(describing: startcomponents.day!)+"-"+String(describing: startcomponents.hour!)+":"+String(describing: startcomponents.minute!)
         let enddatetext = String(describing: endcomponents.hour!)+":"+String(describing: endcomponents.minute!)
         cell.textLabel?.text = event?.title
         cell.detailTextLabel?.text = startdatetext+" - "+enddatetext
@@ -116,14 +125,18 @@ class CalendarEventsViewController: UITableViewController {
     }
     */
 
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier=="AddEventSegue"){
+            let addeventviewcontroller = segue.destination as! AddEventViewController
+            addeventviewcontroller.selectedClient = self.selectedClient
+            addeventviewcontroller.calendar = self.calendar
+        }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
 
 }

@@ -9,6 +9,8 @@
 import UIKit
 import RealmSwift
 import MessageUI
+import Realm
+
 
 extension Date {
     func dayOfWeek() -> String? {
@@ -64,6 +66,7 @@ class incomeTableViewController: UITableViewController {
     func calculateTipofTheLast24hour()->String{
         let to = NSDate()
         let from = to.addingTimeInterval(-3600*24)
+        let 🗄 = try! Realm()
         let allincomes = 🗄.objects(💵.self).filter("time > %@ AND time <= %@", from, to)
         var total:Int = 0
         for item in allincomes {
@@ -74,6 +77,7 @@ class incomeTableViewController: UITableViewController {
     func calculateTotalofTheLast24hour()->String{
         let to = NSDate()
         let from = to.addingTimeInterval(-3600*24)
+        let 🗄 = try! Realm()
         let allincomes = 🗄.objects(💵.self).filter("time > %@ AND time <= %@", from, to)
         var total:Int = 0
         for item in allincomes {
@@ -82,7 +86,10 @@ class incomeTableViewController: UITableViewController {
         return String(total)
     }
     
+    
+    
     func readincomeAndUpdateUI(){
+        let 🗄 = try! Realm()
         💵💵💵 = 🗄.objects(💵.self)
         sections = Dictionary<String, Array<💵>>()
         sortedSections = Array<String>()
@@ -177,7 +184,7 @@ class incomeTableViewController: UITableViewController {
         if tableSection?.count==0{
             sections.removeValue(forKey: sortedSections[indexPath.section])
         }
-        
+        let 🗄 = try! Realm()
         try!🗄.write({ () -> Void in
             🗄.delete(incomeToBeDeleted)
         })
@@ -209,6 +216,7 @@ class incomeTableViewController: UITableViewController {
         if segue.identifier == "showClientDetailFromIncome"{
             let vc = segue.destination as! ClientDetailViewController
             let senderbutton = sender as! UIButton
+            let 🗄 = try! Realm()
             let client = 🗄.object(ofType: 💇.self, forPrimaryKey: senderbutton.titleLabel?.text!)
             vc.selectedClient = client
      }

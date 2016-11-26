@@ -67,7 +67,7 @@ class AddClientViewController: UIViewController {
             alertController.addAction(okAction)
             self.present(alertController, animated: true, completion: nil)
         }
-        if (Int(inputPhoneNumberTextField.text!)==nil){
+        if (Int(inputPhoneNumberTextField.text!)==nil && !(inputPhoneNumberTextField.text!.contains("+"))){
             let alertController = UIAlertController(title: "Error", message: "Invalid phone number format", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
                 UIAlertAction in
@@ -76,7 +76,7 @@ class AddClientViewController: UIViewController {
             alertController.addAction(okAction)
             self.present(alertController, animated: true, completion: nil)
         }
-        if (inputNameTextField.text! != "" && inputPhoneNumberTextField.text! != "" && Int(inputPhoneNumberTextField.text!) != nil) {
+        if (inputNameTextField.text! != "" && inputPhoneNumberTextField.text! != "" && (Int(inputPhoneNumberTextField.text!) != nil || inputPhoneNumberTextField.text!.contains("+"))) {
             if (clientImageView.image==nil){
                 imagePath = "NOIMAGE"
             }
@@ -86,11 +86,18 @@ class AddClientViewController: UIViewController {
             }
         let name = inputNameTextField.text!
         let desc = AddClientDescriptionTextView.text!
-        let phonenumber = Int(inputPhoneNumberTextField.text!)!
+        let phonenumber = inputPhoneNumberTextField.text!
         
+        let 🗄 = try! Realm()
+        
+            let client = 💇()
+            client.name = name
+            client.desc = desc
+            client.phoneNumber = phonenumber
+            client.picture = imagePath
         try! 🗄.write {
             () -> Void in
-            🗄.create(💇.self, value: ["name":name,"desc":desc,"phoneNumber":phonenumber, "picture":imagePath], update: true)
+            🗄.add(client, update: true)
         }
             let alertController = UIAlertController(title: "Success", message: "Client saved to the database.", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
@@ -99,8 +106,8 @@ class AddClientViewController: UIViewController {
             }
             alertController.addAction(okAction)
             self.present(alertController, animated: true, completion: nil)
+            view.endEditing(true)
         }
-        view.endEditing(true)
     }
     
     @IBAction func onBackgroundTouchUpInside(_ sender: AnyObject) {

@@ -12,9 +12,9 @@ import RealmSwift
 class 💇: Object {
 
     dynamic var name:String = "Minta Jakab"
-    dynamic var picture:String="NOIMAGE"
+    dynamic var picture:String = "NOIMAGE"
     dynamic var desc: String = "Nullással tarkóig 👌😂"
-    dynamic var phoneNumber: Int = 420
+    dynamic var phoneNumber: String = "420"
     
     func addPhoto(Picture p:String){
         picture = p;

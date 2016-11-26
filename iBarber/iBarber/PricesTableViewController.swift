@@ -30,6 +30,7 @@ class PricesTableViewController: UITableViewController {
     }
 
     func readPriceAndUpdateUI(){
+        let 🗄 = try! Realm()
         💯💯💯 = 🗄.objects(💯.self)
         self.priceTableView.setEditing(false, animated: true)
         self.priceTableView.reloadData()
@@ -66,7 +67,7 @@ class PricesTableViewController: UITableViewController {
         if editingStyle == .delete {
             
             let priceToBeDeleted = 💯💯💯[indexPath.row]
-            
+            let 🗄 = try! Realm()
             try!🗄.write({ () -> Void in
                 🗄.delete(priceToBeDeleted)
             })

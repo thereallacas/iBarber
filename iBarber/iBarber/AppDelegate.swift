@@ -9,11 +9,10 @@
 import UIKit
 import RealmSwift
 
-let 🗄 = try! Realm()
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
        
     fileprivate func createDirectory(directoryName:String){
@@ -30,13 +29,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }}
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        var pricelist = [["Férfi vágás",1460], ["Férfi mosás vágás",1880], ["Női mosás,vágás,szárítás",3880]]
+    
+        Realm.Configuration.defaultConfiguration = Realm.Configuration(
+            schemaVersion: 2,
+            migrationBlock: { migration, oldSchemaVersion in
+                if (oldSchemaVersion < 2) {
+                  
+                    migration.enumerateObjects(ofType: 💇.className()) { oldObject, newObject in
+                        // combine name fields into a single field
+                        let phoneNumber = oldObject!["phoneNumber"] as! Int
+                        let newversionphoneNumber = String(phoneNumber)
+                        newObject!["phoneNumber"] = "\(newversionphoneNumber)"
+                    }
+                }
+        })
+        
+        let 🗄 = try! Realm()
+        
+        let pricelist = [["Férfi vágás",1460], ["Férfi mosás vágás",1880], ["Női mosás,vágás,szárítás",3880]]
         try! 🗄.write {
             for item in pricelist {
                 🗄.create(💯.self, value: item, update: true)
             }
         }
         createDirectory(directoryName: "ClientPics")
+        
         return true
     }
 

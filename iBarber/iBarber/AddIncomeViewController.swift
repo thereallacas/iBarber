@@ -9,6 +9,8 @@
 import UIKit
 import RealmSwift
 
+
+
 extension AddIncomeViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -73,8 +75,8 @@ extension AddIncomeViewController: UIPickerViewDataSource,UIPickerViewDelegate{
     
     // The number of rows of data
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-            return pickerData.count
-        }
+        return pickerData.count
+    }
     
     // The data to return for the row and component (column) that's being passed in
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -110,27 +112,30 @@ class AddIncomeViewController: UIViewController {
             self.present(alertController, animated: true, completion: nil)
         }
         if (inputNameTextFieldForIncome.text! != "" && inputMoneyTextField.text! != "" && Int(inputMoneyTextField.text!) != nil) {
+            let total = Int(inputMoneyTextField.text!)!
+            let 🗄 = try! Realm()
+            let clientResult = 🗄.objects(💇.self).filter(NSPredicate(format: "name = %@", inputNameTextFieldForIncome.text!))
             
-        let total = Int(inputMoneyTextField.text!)!
-        let clientResult = 🗄.objects(💇.self).filter(NSPredicate(format: "name = %@", inputNameTextFieldForIncome.text!))
-        
-        var client : 💇!
-        if (clientResult.isEmpty){
-            client = 💇(value: ["name":inputNameTextFieldForIncome.text!])
-        }
-        else {
-            client = clientResult.first!
-        }
-        
-        let income = 💵(value: ["operation": selectedOperation,"price":priceOfSelectedOperation,"date": NSDate(),"client":client, "total":total])
-        
-        try! 🗄.write {
-            () -> Void in
-            🗄.add(income)
-        }
+            var client : 💇!
+            if (clientResult.isEmpty){
+                client = 💇(value: ["name":inputNameTextFieldForIncome.text!, "phoneNumber":"234"])
+            }
+            else {
+                client = clientResult.first!
+            }
+            
+            let income = 💵(value: ["operation": selectedOperation,"price":priceOfSelectedOperation,"date": NSDate(),"client":client, "total":total])
+            try! 🗄.write {
+                () -> Void in
+                🗄.add(income)
+            }
+            view.endEditing(true)
+            if let navController = self.navigationController {
+                navController.popViewController(animated: true)
+            }
         }
     }
- 
+    
     @IBAction func onBackgroundTouchUpInside(_ sender: AnyObject) {
         view.endEditing(true)
     }
@@ -149,7 +154,7 @@ class AddIncomeViewController: UIViewController {
     
     var pickerData = [String]()
     var priceData = [Int]()
-
+    
     var constantForPortrait: CGFloat?
     var constantForLandScape: CGFloat?
     
@@ -166,31 +171,31 @@ class AddIncomeViewController: UIViewController {
         inputNameTextFieldForIncome.delegate = self
         operationPickerView.delegate = self
         operationPickerView.dataSource = self
-      
+        
         constantForPortrait = TopConstraint.constant
         constantForLandScape = constantForPortrait!/4
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-          print ("appeared")
-       
+        print ("appeared")
+        let 🗄 = try! Realm()
         pickerData = 🗄.objects(💯.self).value(forKey: "operation") as! [String]
         priceData = 🗄.objects(💯.self).value(forKey: "price") as! [Int]
         operationPickerView.reloadAllComponents()
         
-        selectedOperation = "Default"
-        priceOfSelectedOperation = 0
-        pickerSelectionLabel.text = "Default"
+        selectedOperation = "Hajvágás"
+        priceOfSelectedOperation = 1460
+        pickerSelectionLabel.text = selectedOperation
         autoCompletePossibilities = 🗄.objects(💇.self).value(forKey: "name") as! [String]
         NotificationCenter.default.addObserver(self, selector: #selector(AddClientViewController.keyboardWillShow), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(AddClientViewController.keyboardWillHide), name: .UIKeyboardWillHide, object: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-      
+        
         super.viewWillDisappear(animated)
-          print ("disappeared")
+        print ("disappeared")
         NotificationCenter.default.removeObserver(self)
     }
     
@@ -209,7 +214,7 @@ class AddIncomeViewController: UIViewController {
                         self.TopConstraint.constant = self.TopConstraint.constant +
                             self.constantForLandScape!-self.TopConstraint.constant-keyboardSize.height/2
                     }
-                 })
+                })
             }
         }
     }

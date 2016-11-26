@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import RealmSwift
 class AddtoPriceListViewController: UIViewController {
 
     
@@ -56,6 +56,8 @@ class AddtoPriceListViewController: UIViewController {
         if (addpricelistnametextfield.text! != "" && addpricelistpricetextfield.text! != "" && Int(addpricelistpricetextfield.text!) != nil) {
         let name = addpricelistnametextfield.text!
         let price = Int(addpricelistpricetextfield.text!)!
+            
+        let 🗄 = try! Realm()
         let pricetag = 🗄.object(ofType: 💯.self, forPrimaryKey: name)
         
         if pricetag == nil{
