@@ -31,6 +31,7 @@ extension AddEventViewController: UIPickerViewDataSource,UIPickerViewDelegate{
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectedOperation = pickerData[row]
+        OPERATIONLABEL.text = pickerData[row]
     }
 }
 
@@ -46,6 +47,9 @@ class AddEventViewController: UIViewController {
     
     var startdate:NSDate!
     var enddate:NSDate!
+    
+    @IBOutlet weak var OPERATIONLABEL: UILabel!
+    
     
     @IBOutlet weak var START: UIDatePicker!
     

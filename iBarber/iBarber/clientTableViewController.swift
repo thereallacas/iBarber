@@ -15,7 +15,19 @@ class clientTableViewController: UITableViewController {
     
     @IBOutlet var clientTableView: UITableView!
     
+    @IBOutlet weak var ClientSegmentedControl: UISegmentedControl!
     
+    @IBAction func selectedSegmentChanged(_ sender: UISegmentedControl) {
+        switch ClientSegmentedControl.selectedSegmentIndex
+        {
+        case 0:
+           💇💇💇 = 💇💇💇.sorted(byProperty: "name")
+        case 1:
+            💇💇💇 = 💇💇💇.sorted(byProperty: "incomeCount", ascending: false)
+        default:
+            break; 
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +46,7 @@ class clientTableViewController: UITableViewController {
     
     func readclientAndUpdateUI(){
         let 🗄 = try! Realm()
-        💇💇💇 = 🗄.objects(💇.self)
+        💇💇💇 = 🗄.objects(💇.self).sorted(byProperty: "name")
         self.clientTableView.setEditing(false, animated: true)
         self.clientTableView.reloadData()
     }
@@ -108,21 +120,4 @@ class clientTableViewController: UITableViewController {
             self.present(alertController, animated: true, completion: nil)
         }
     }
-    
-    
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-     
-     }
-     */
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
-    
 }

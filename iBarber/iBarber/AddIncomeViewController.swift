@@ -93,7 +93,12 @@ extension AddIncomeViewController: UIPickerViewDataSource,UIPickerViewDelegate{
 class AddIncomeViewController: UIViewController {
     
     @IBAction func incomeSaveButtonTouchUpInside(_ sender: AnyObject) {
-        if (inputNameTextFieldForIncome.text=="" || inputMoneyTextField.text==""){
+        
+        if (inputMoneyTextField.text==""){
+            inputMoneyTextField.text = String(priceOfSelectedOperation)
+        }
+        
+        if (inputNameTextFieldForIncome.text==""){
             let alertController = UIAlertController(title: "Error", message: "One or more field is empty.", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
                 UIAlertAction in
@@ -111,23 +116,28 @@ class AddIncomeViewController: UIViewController {
             alertController.addAction(okAction)
             self.present(alertController, animated: true, completion: nil)
         }
-        if (inputNameTextFieldForIncome.text! != "" && inputMoneyTextField.text! != "" && Int(inputMoneyTextField.text!) != nil) {
-            let total = Int(inputMoneyTextField.text!)!
+        
+        if (inputNameTextFieldForIncome.text! != "" && Int(inputMoneyTextField.text!) != nil) {
+            let total = inputMoneyTextField.text == "" ? priceOfSelectedOperation : Int(inputMoneyTextField.text!)!
             let 🗄 = try! Realm()
             let clientResult = 🗄.objects(💇.self).filter(NSPredicate(format: "name = %@", inputNameTextFieldForIncome.text!))
             
             var client : 💇!
             if (clientResult.isEmpty){
-                client = 💇(value: ["name":inputNameTextFieldForIncome.text!, "phoneNumber":"234"])
+                client = 💇(value: ["name":inputNameTextFieldForIncome.text!, "phoneNumber":"234", "incomeCount":1])
             }
             else {
                 client = clientResult.first!
+                try! 🗄.write {
+                client.incomeCount = client.incomeCount+1
+                }
             }
             
             let income = 💵(value: ["operation": selectedOperation,"price":priceOfSelectedOperation,"date": NSDate(),"client":client, "total":total])
             try! 🗄.write {
                 () -> Void in
                 🗄.add(income)
+                🗄.add(client, update: true)
             }
             view.endEditing(true)
             if let navController = self.navigationController {
@@ -184,9 +194,9 @@ class AddIncomeViewController: UIViewController {
         priceData = 🗄.objects(💯.self).value(forKey: "price") as! [Int]
         operationPickerView.reloadAllComponents()
         
-        selectedOperation = "Hajvágás"
-        priceOfSelectedOperation = 1460
-        pickerSelectionLabel.text = selectedOperation
+        selectedOperation = pickerData.isEmpty ? "???" : pickerData[0]
+        priceOfSelectedOperation = priceData.isEmpty ? 0 : priceData[0]
+        pickerSelectionLabel.text = selectedOperation + " : " + String(priceOfSelectedOperation)
         autoCompletePossibilities = 🗄.objects(💇.self).value(forKey: "name") as! [String]
         NotificationCenter.default.addObserver(self, selector: #selector(AddClientViewController.keyboardWillShow), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(AddClientViewController.keyboardWillHide), name: .UIKeyboardWillHide, object: nil)

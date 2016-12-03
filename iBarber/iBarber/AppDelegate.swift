@@ -31,15 +31,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     
         Realm.Configuration.defaultConfiguration = Realm.Configuration(
-            schemaVersion: 2,
+            schemaVersion: 6,
             migrationBlock: { migration, oldSchemaVersion in
-                if (oldSchemaVersion < 2) {
+                if (oldSchemaVersion < 6) {
                   
                     migration.enumerateObjects(ofType: 💇.className()) { oldObject, newObject in
-                        // combine name fields into a single field
-                        let phoneNumber = oldObject!["phoneNumber"] as! Int
-                        let newversionphoneNumber = String(phoneNumber)
-                        newObject!["phoneNumber"] = "\(newversionphoneNumber)"
+                        newObject!["incomeCount"] = 0
                     }
                 }
         })

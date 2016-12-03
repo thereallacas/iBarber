@@ -87,6 +87,12 @@ class incomeTableViewController: UITableViewController {
     }
     
     
+    func before(value1: String, value2: String) -> Bool {
+        // One string is alphabetically first.
+        // ... True means value1 precedes value2.
+        return value1 < value2;
+    }
+    
     
     func readincomeAndUpdateUI(){
         let 🗄 = try! Realm()
@@ -106,6 +112,7 @@ class incomeTableViewController: UITableViewController {
             }
         }
         self.sortedSections = [String](sections.keys)
+        self.sortedSections.sort{return $0>$1}
         self.incomeTableView.setEditing(false, animated: true)
         self.incomeTableView.reloadData()
     }
@@ -185,6 +192,9 @@ class incomeTableViewController: UITableViewController {
             sections.removeValue(forKey: sortedSections[indexPath.section])
         }
         let 🗄 = try! Realm()
+        try! 🗄.write {
+            incomeToBeDeleted.client!.incomeCount = (incomeToBeDeleted.client!.incomeCount)-1
+        }
         try!🗄.write({ () -> Void in
             🗄.delete(incomeToBeDeleted)
         })

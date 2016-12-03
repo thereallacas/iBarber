@@ -58,7 +58,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eRz-Ug-VN4" id="xU8-SS-NXd">
-                                    <frame key="frameInset" width="375" height="44"/>
+                                    <frame key="frameInset" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mKV-Ky-5Vx">
@@ -326,12 +326,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="c1T-Z0-qvX">
+                            <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="qXK-po-sFw">
+                                    <segments>
+                                        <segment title="A-Z"/>
+                                        <segment title="Frequency"/>
+                                    </segments>
+                                    <connections>
+                                        <action selector="selectedSegmentChanged:" destination="ey0-WI-kaw" eventType="valueChanged" id="7Zx-bZ-bSv"/>
+                                    </connections>
+                                </segmentedControl>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="qXK-po-sFw" firstAttribute="centerY" secondItem="c1T-Z0-qvX" secondAttribute="centerY" id="Xck-4A-7Pd"/>
+                                <constraint firstItem="qXK-po-sFw" firstAttribute="leading" secondItem="c1T-Z0-qvX" secondAttribute="leading" id="dDf-Nb-Nwf"/>
+                                <constraint firstAttribute="trailing" secondItem="qXK-po-sFw" secondAttribute="trailing" id="s2S-3j-v76"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClientCell" rowHeight="65" id="8hM-Fi-d1t" customClass="💇Cell" customModule="iBarber" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="375" height="65"/>
+                                <rect key="frame" x="0.0" y="136" width="375" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8hM-Fi-d1t" id="pjO-GT-Lay">
-                                    <frame key="frameInset" width="375" height="65"/>
+                                    <frame key="frameInset" width="375" height="64"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BVB-pp-PgZ">
@@ -384,6 +405,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="ClientSegmentedControl" destination="qXK-po-sFw" id="619-Ix-vzg"/>
                         <outlet property="clientTableView" destination="39L-oH-UEE" id="mPU-Qu-E3v"/>
                         <segue destination="kd4-uy-EPm" kind="show" identifier="showClientDetail" id="xjG-1n-APU"/>
                     </connections>
@@ -669,7 +691,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nSk-RH-sQ4" id="Mr7-mu-hhg">
-                                    <frame key="frameInset" width="375" height="44"/>
+                                    <frame key="frameInset" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -1039,6 +1061,6 @@
         <image name="samplepic" width="85" height="85"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="raO-Kz-ALp"/>
+        <segue reference="xjG-1n-APU"/>
     </inferredMetricsTieBreakers>
 </document>

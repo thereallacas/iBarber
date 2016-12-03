@@ -108,6 +108,9 @@ class AddClientViewController: UIViewController {
             self.present(alertController, animated: true, completion: nil)
             view.endEditing(true)
         }
+        if let navController = self.navigationController {
+            navController.popViewController(animated: true)
+        }
     }
     
     @IBAction func onBackgroundTouchUpInside(_ sender: AnyObject) {
