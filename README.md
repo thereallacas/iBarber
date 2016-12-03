@@ -15,6 +15,10 @@ A + jelre kattintva mindenhol hozzá tud adni adatbázisához elemeket, további
 ### Screenshotok
 <p align="center">
 <img src="screenshots/screenshot1.png" width="640"height="360"></p>
+<p align="center">
 <img src="screenshots/screenshot2.png" width="360"height="640">
 <img src="screenshots/screenshot3.png" width="360"height="640">
+</p>
+<p align="center">
 <img src="screenshots/screenshot4.png" width="360"height="640">
+</p>
