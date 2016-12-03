@@ -13,7 +13,7 @@ Az iBarber segítségével könnyedén karban tudjuk tartani forgalmunkat. Lehet
 A + jelre kattintva mindenhol hozzá tud adni adatbázisához elemeket, további tudnivalóra nincs szükség.
 
 ### Screenshotok
-![ScreenShot](screenshots/screenshot1.jpg)
-![ScreenShot](screenshots/screenshot2.jpg)
-![ScreenShot](screenshots/screenshot3.jpg)
-![ScreenShot](screenshots/screenshot4.jpg)
+![ScreenShot](screenshots/screenshot1.png)
+![ScreenShot](screenshots/screenshot2.png)
+![ScreenShot](screenshots/screenshot3.png)
+![ScreenShot](screenshots/screenshot4.png)
