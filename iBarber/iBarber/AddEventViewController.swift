@@ -31,7 +31,7 @@ extension AddEventViewController: UIPickerViewDataSource,UIPickerViewDelegate{
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectedOperation = pickerData[row]
-        OPERATIONLABEL.text = pickerData[row]
+        OPERATIONLABEL.text = selectedOperation
     }
 }
 
@@ -106,6 +106,9 @@ class AddEventViewController: UIViewController {
         selectedOperation = "SAMPLE HAIRCUT"
         startdate = NSDate()
         enddate = startdate.addingTimeInterval(3600)
+        let 🗄 = try! Realm()
+        pickerData = 🗄.objects(💯.self).value(forKey: "operation") as! [String]
+        OPERATION.reloadAllComponents()
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {

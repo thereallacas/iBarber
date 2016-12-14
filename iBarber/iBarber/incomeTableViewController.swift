@@ -87,10 +87,25 @@ class incomeTableViewController: UITableViewController {
     }
     
     
-    func before(value1: String, value2: String) -> Bool {
+    func before(_ value1: String, _ value2: String) -> Bool {
         // One string is alphabetically first.
         // ... True means value1 precedes value2.
-        return value1 < value2;
+        
+        let c1 = value1.characters
+        let space1 = c1.index(of: " ")
+            let newvalue1 = value1[value1.startIndex..<c1.index(after: space1!)]
+        
+        let c2 = value2.characters
+        let space2 = c2.index(of: " ")
+        let newvalue2 = value2[value2.startIndex..<c2.index(after: space2!)]
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy.MM.dd"
+        let newvalue1date = formatter.date(from: newvalue1)
+        let newvalue2date = formatter.date(from: newvalue2)
+        
+        
+        return newvalue1date! > newvalue2date!;
     }
     
     
@@ -112,7 +127,7 @@ class incomeTableViewController: UITableViewController {
             }
         }
         self.sortedSections = [String](sections.keys)
-        self.sortedSections.sort{return $0>$1}
+        self.sortedSections.sort(by: before)
         self.incomeTableView.setEditing(false, animated: true)
         self.incomeTableView.reloadData()
     }

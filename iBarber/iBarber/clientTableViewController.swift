@@ -22,11 +22,14 @@ class clientTableViewController: UITableViewController {
         {
         case 0:
            💇💇💇 = 💇💇💇.sorted(byProperty: "name")
+           self.clientTableView.reloadData()
         case 1:
             💇💇💇 = 💇💇💇.sorted(byProperty: "incomeCount", ascending: false)
+            self.clientTableView.reloadData()
         default:
             break; 
         }
+        
     }
     
     override func viewDidLoad() {
@@ -49,6 +52,7 @@ class clientTableViewController: UITableViewController {
         💇💇💇 = 🗄.objects(💇.self).sorted(byProperty: "name")
         self.clientTableView.setEditing(false, animated: true)
         self.clientTableView.reloadData()
+        view.setNeedsDisplay()
     }
     
     override func didReceiveMemoryWarning() {
