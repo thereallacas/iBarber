@@ -19,29 +19,29 @@
 		526360C41DDB42D500701DEB /* AddClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526360BA1DDB42D500701DEB /* AddClientViewController.swift */; };
 		526360C61DDB42D500701DEB /* clientTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526360BC1DDB42D500701DEB /* clientTableViewController.swift */; };
 		526360C91DDB42D500701DEB /* 💵Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526360BF1DDB42D500701DEB /* 💵Cell.swift */; };
-		526360DD1DDB492800701DEB /* swift-3.0 in Resources */ = {isa = PBXBuildFile; fileRef = 526360DC1DDB492800701DEB /* swift-3.0 */; };
-		526360E01DDB49B700701DEB /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526360DE1DDB49B700701DEB /* Realm.framework */; };
-		526360E11DDB49B700701DEB /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 526360DE1DDB49B700701DEB /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		526360E21DDB49B700701DEB /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526360DF1DDB49B700701DEB /* RealmSwift.framework */; };
-		526360E31DDB49B700701DEB /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 526360DF1DDB49B700701DEB /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		526360E61DDB4AE100701DEB /* incomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526360E51DDB4AE100701DEB /* incomeTableViewController.swift */; };
 		528B25591DE5F166004FFE75 /* AddtoPriceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528B25581DE5F166004FFE75 /* AddtoPriceListViewController.swift */; };
+		52973CBE1E1F199D00EFDA05 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52973CBD1E1F199D00EFDA05 /* Realm.framework */; };
+		52973CBF1E1F199D00EFDA05 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 52973CBD1E1F199D00EFDA05 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		52973CC21E1F19AF00EFDA05 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52973CC11E1F19AF00EFDA05 /* RealmSwift.framework */; };
+		52973CC31E1F19AF00EFDA05 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 52973CC11E1F19AF00EFDA05 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		52992AA01DDB543F00552D1D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52992A9F1DDB543F00552D1D /* LaunchScreen.storyboard */; };
 		52992AA21DDBA7C200552D1D /* 💯.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52992AA11DDBA7C200552D1D /* 💯.swift */; };
 		52992AA41DDC53B500552D1D /* ClientDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52992AA31DDC53B500552D1D /* ClientDetailViewController.swift */; };
 		52992AA81DDC5A6A00552D1D /* 💇Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52992AA71DDC5A6A00552D1D /* 💇Cell.swift */; };
 		52A5FCD51DE5ADE70066BD58 /* PricesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A5FCD41DE5ADE70066BD58 /* PricesTableViewController.swift */; };
+		52CA9E2F1E3217D6002F48A2 /* hu.lacas.shark.iBarber 2017-01-20 10:47.14.698.xcappdata in Resources */ = {isa = PBXBuildFile; fileRef = 52CA9E2E1E3217D6002F48A2 /* hu.lacas.shark.iBarber 2017-01-20 10:47.14.698.xcappdata */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		526360E41DDB49B700701DEB /* Embed Frameworks */ = {
+		52973CC01E1F199D00EFDA05 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				526360E31DDB49B700701DEB /* RealmSwift.framework in Embed Frameworks */,
-				526360E11DDB49B700701DEB /* Realm.framework in Embed Frameworks */,
+				52973CC31E1F19AF00EFDA05 /* RealmSwift.framework in Embed Frameworks */,
+				52973CBF1E1F199D00EFDA05 /* Realm.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -63,16 +63,17 @@
 		526360BA1DDB42D500701DEB /* AddClientViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddClientViewController.swift; sourceTree = "<group>"; };
 		526360BC1DDB42D500701DEB /* clientTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = clientTableViewController.swift; sourceTree = "<group>"; };
 		526360BF1DDB42D500701DEB /* 💵Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "💵Cell.swift"; sourceTree = "<group>"; };
-		526360DC1DDB492800701DEB /* swift-3.0 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "swift-3.0"; sourceTree = "<group>"; };
-		526360DE1DDB49B700701DEB /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "swift-3.0/Realm.framework"; sourceTree = "<group>"; };
-		526360DF1DDB49B700701DEB /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "swift-3.0/RealmSwift.framework"; sourceTree = "<group>"; };
 		526360E51DDB4AE100701DEB /* incomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = incomeTableViewController.swift; sourceTree = "<group>"; };
 		528B25581DE5F166004FFE75 /* AddtoPriceListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddtoPriceListViewController.swift; sourceTree = "<group>"; };
+		52973CBD1E1F199D00EFDA05 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "swift-3.0.2/Realm.framework"; sourceTree = "<group>"; };
+		52973CC11E1F19AF00EFDA05 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "swift-3.0.2/RealmSwift.framework"; sourceTree = "<group>"; };
 		52992A9F1DDB543F00552D1D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52992AA11DDBA7C200552D1D /* 💯.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "💯.swift"; sourceTree = "<group>"; };
 		52992AA31DDC53B500552D1D /* ClientDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientDetailViewController.swift; sourceTree = "<group>"; };
 		52992AA71DDC5A6A00552D1D /* 💇Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "💇Cell.swift"; sourceTree = "<group>"; };
 		52A5FCD41DE5ADE70066BD58 /* PricesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PricesTableViewController.swift; sourceTree = "<group>"; };
+		52CA9E2E1E3217D6002F48A2 /* hu.lacas.shark.iBarber 2017-01-20 10:47.14.698.xcappdata */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "hu.lacas.shark.iBarber 2017-01-20 10:47.14.698.xcappdata"; sourceTree = "<group>"; };
+		52FB9E3A1E12554600C88585 /* iBarber.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iBarber.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,8 +81,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				526360E21DDB49B700701DEB /* RealmSwift.framework in Frameworks */,
-				526360E01DDB49B700701DEB /* Realm.framework in Frameworks */,
+				52973CC21E1F19AF00EFDA05 /* RealmSwift.framework in Frameworks */,
+				52973CBE1E1F199D00EFDA05 /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,11 +140,11 @@
 		526360911DDB389700701DEB = {
 			isa = PBXGroup;
 			children = (
-				526360DE1DDB49B700701DEB /* Realm.framework */,
-				526360DF1DDB49B700701DEB /* RealmSwift.framework */,
-				526360DC1DDB492800701DEB /* swift-3.0 */,
+				52973CC11E1F19AF00EFDA05 /* RealmSwift.framework */,
+				52973CBD1E1F199D00EFDA05 /* Realm.framework */,
 				5263609C1DDB389700701DEB /* iBarber */,
 				5263609B1DDB389700701DEB /* Products */,
+				52FB9E3B1E12554900C88585 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -158,6 +159,8 @@
 		5263609C1DDB389700701DEB /* iBarber */ = {
 			isa = PBXGroup;
 			children = (
+				52CD92C51E1FC0F500F1FE1D /* data */,
+				52FB9E3A1E12554600C88585 /* iBarber.entitlements */,
 				52A5FCD31DE5ADBA0066BD58 /* Prices */,
 				52339CC91DDD0D4900F2D395 /* CalendarControllers */,
 				52339CC81DDD0D1B00F2D395 /* IncomeControllers */,
@@ -182,6 +185,21 @@
 			name = Prices;
 			sourceTree = "<group>";
 		};
+		52CD92C51E1FC0F500F1FE1D /* data */ = {
+			isa = PBXGroup;
+			children = (
+				52CA9E2E1E3217D6002F48A2 /* hu.lacas.shark.iBarber 2017-01-20 10:47.14.698.xcappdata */,
+			);
+			name = data;
+			sourceTree = "<group>";
+		};
+		52FB9E3B1E12554900C88585 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -192,7 +210,7 @@
 				526360961DDB389700701DEB /* Sources */,
 				526360971DDB389700701DEB /* Frameworks */,
 				526360981DDB389700701DEB /* Resources */,
-				526360E41DDB49B700701DEB /* Embed Frameworks */,
+				52973CC01E1F199D00EFDA05 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -215,8 +233,16 @@
 				TargetAttributes = {
 					526360991DDB389700701DEB = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = F93Z63QDN8;
+						DevelopmentTeam = 6GYRJ74674;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 0;
+							};
+							com.apple.iCloud = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -243,7 +269,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				526360DD1DDB492800701DEB /* swift-3.0 in Resources */,
+				52CA9E2F1E3217D6002F48A2 /* hu.lacas.shark.iBarber 2017-01-20 10:47.14.698.xcappdata in Resources */,
 				526360A71DDB389800701DEB /* Assets.xcassets in Resources */,
 				52992AA01DDB543F00552D1D /* LaunchScreen.storyboard in Resources */,
 				526360A51DDB389800701DEB /* Main.storyboard in Resources */,
@@ -387,16 +413,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = F93Z63QDN8;
+				DEVELOPMENT_TEAM = 6GYRJ74674;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/iBarber",
 					"$(PROJECT_DIR)/swift-3.0",
+					"$(PROJECT_DIR)/swift-3.0.2",
 				);
 				INFOPLIST_FILE = iBarber/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = hu.lacas.shark.iBarber;
+				PRODUCT_BUNDLE_IDENTIFIER = hu.flynn.jake.iBarber;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -406,16 +433,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = F93Z63QDN8;
+				DEVELOPMENT_TEAM = 6GYRJ74674;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/iBarber",
 					"$(PROJECT_DIR)/swift-3.0",
+					"$(PROJECT_DIR)/swift-3.0.2",
 				);
 				INFOPLIST_FILE = iBarber/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = hu.lacas.shark.iBarber;
+				PRODUCT_BUNDLE_IDENTIFIER = hu.flynn.jake.iBarber;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

@@ -2,12 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSCalendarsUsageDescription</key>
-	<string>Need for booking appointment for clients</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Need for adding pictures to clients</string>
-	<key>NSCameraUsageDescription</key>
-	<string>Need for taking photo of the clients</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -26,6 +20,12 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Need for booking appointment for clients</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Need for taking photo of the clients</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Need for adding pictures to clients</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
